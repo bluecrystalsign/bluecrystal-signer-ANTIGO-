@@ -1,0 +1,69 @@
+REGEDIT4
+
+[HKEY_CLASSES_ROOT\Record\{2758D84E-C49B-31BA-BBC0-925CB88DCED0}\1.0.5160.40298]
+"Class"="Activex.ObjectSafetyOptions"
+"Assembly"="ittruSignAx, Version=1.0.5160.40298, Culture=neutral, PublicKeyToken=a8cb13b39f18413d"
+"RuntimeVersion"="v2.0.50727"
+"CodeBase"="file:///D:/sergio/projetos/cryptoApi/codeproj01/ittruSignAx/AcriveXSourceCode/bin/Debug/ittruSignAx.dll"
+
+[HKEY_CLASSES_ROOT\Activex.IObjectSafetyImpl]
+@="Activex.IObjectSafetyImpl"
+
+[HKEY_CLASSES_ROOT\Activex.IObjectSafetyImpl\CLSID]
+@="{BA872897-9DB5-384D-B193-1B62A3749AD9}"
+
+[HKEY_CLASSES_ROOT\CLSID\{BA872897-9DB5-384D-B193-1B62A3749AD9}]
+@="Activex.IObjectSafetyImpl"
+
+[HKEY_CLASSES_ROOT\CLSID\{BA872897-9DB5-384D-B193-1B62A3749AD9}\InprocServer32]
+@="mscoree.dll"
+"ThreadingModel"="Both"
+"Class"="Activex.IObjectSafetyImpl"
+"Assembly"="ittruSignAx, Version=1.0.5160.40298, Culture=neutral, PublicKeyToken=a8cb13b39f18413d"
+"RuntimeVersion"="v2.0.50727"
+"CodeBase"="file:///D:/sergio/projetos/cryptoApi/codeproj01/ittruSignAx/AcriveXSourceCode/bin/Debug/ittruSignAx.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{BA872897-9DB5-384D-B193-1B62A3749AD9}\InprocServer32\1.0.5160.40298]
+"Class"="Activex.IObjectSafetyImpl"
+"Assembly"="ittruSignAx, Version=1.0.5160.40298, Culture=neutral, PublicKeyToken=a8cb13b39f18413d"
+"RuntimeVersion"="v2.0.50727"
+"CodeBase"="file:///D:/sergio/projetos/cryptoApi/codeproj01/ittruSignAx/AcriveXSourceCode/bin/Debug/ittruSignAx.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{BA872897-9DB5-384D-B193-1B62A3749AD9}\ProgId]
+@="Activex.IObjectSafetyImpl"
+
+[HKEY_CLASSES_ROOT\CLSID\{BA872897-9DB5-384D-B193-1B62A3749AD9}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}]
+
+[HKEY_CLASSES_ROOT\Record\{E1F21720-3C16-34ED-A6A1-5C4728FE24C8}\1.0.5160.40298]
+"Class"="ittru.ObjectSafetyOptions"
+"Assembly"="ittruSignAx, Version=1.0.5160.40298, Culture=neutral, PublicKeyToken=a8cb13b39f18413d"
+"RuntimeVersion"="v2.0.50727"
+"CodeBase"="file:///D:/sergio/projetos/cryptoApi/codeproj01/ittruSignAx/AcriveXSourceCode/bin/Debug/ittruSignAx.dll"
+
+[HKEY_CLASSES_ROOT\ittru]
+@="ittru.signAx"
+
+[HKEY_CLASSES_ROOT\ittru\CLSID]
+@="{D1FF97D1-06CA-4BB0-8704-62F30C131B55}"
+
+[HKEY_CLASSES_ROOT\CLSID\{D1FF97D1-06CA-4BB0-8704-62F30C131B55}]
+@="ittru.signAx"
+
+[HKEY_CLASSES_ROOT\CLSID\{D1FF97D1-06CA-4BB0-8704-62F30C131B55}\InprocServer32]
+@="mscoree.dll"
+"ThreadingModel"="Both"
+"Class"="ittru.signAx"
+"Assembly"="ittruSignAx, Version=1.0.5160.40298, Culture=neutral, PublicKeyToken=a8cb13b39f18413d"
+"RuntimeVersion"="v2.0.50727"
+"CodeBase"="file:///D:/sergio/projetos/cryptoApi/codeproj01/ittruSignAx/AcriveXSourceCode/bin/Debug/ittruSignAx.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{D1FF97D1-06CA-4BB0-8704-62F30C131B55}\InprocServer32\1.0.5160.40298]
+"Class"="ittru.signAx"
+"Assembly"="ittruSignAx, Version=1.0.5160.40298, Culture=neutral, PublicKeyToken=a8cb13b39f18413d"
+"RuntimeVersion"="v2.0.50727"
+"CodeBase"="file:///D:/sergio/projetos/cryptoApi/codeproj01/ittruSignAx/AcriveXSourceCode/bin/Debug/ittruSignAx.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{D1FF97D1-06CA-4BB0-8704-62F30C131B55}\ProgId]
+@="ittru"
+
+[HKEY_CLASSES_ROOT\CLSID\{D1FF97D1-06CA-4BB0-8704-62F30C131B55}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}]

@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Codebase: *
+Permissions: all-permissions
+Application-Library-Allowable-Codebase: *
+Caller-Allowable-Codebase: *
+Application-Name: BluC pkcs11 signer

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="bluecrystal.ws.tc_1">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/res"/>
+        <dependent-module archiveName="bluecrystal.deps.BC_G2_1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/bluecrystal.deps.BC_G2_1.0.0/bluecrystal.deps.BC_G2_1.0.0">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="bluecrystal.service_1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/bluecrystal.service_1.0.0/bluecrystal.service_1.0.0">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="bluecrystal.domain_1.0.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/bluecrystal.domain_1.0.0/bluecrystal.domain_1.0.0">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="bluecrystal.ws.tc_1"/>
+        <property name="java-output-path" value="/bluecrystal.ws.tc_1/build/classes"/>
+    </wb-module>
+</project-modules>

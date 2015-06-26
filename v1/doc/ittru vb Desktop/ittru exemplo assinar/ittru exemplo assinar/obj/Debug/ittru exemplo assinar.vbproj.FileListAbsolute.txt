@@ -1,0 +1,22 @@
+c:\users\sergio\documents\visual studio 2013\Projects\ittru exemplo assinar\ittru exemplo assinar\bin\Debug\ittru exemplo assinar.exe.config
+c:\users\sergio\documents\visual studio 2013\Projects\ittru exemplo assinar\ittru exemplo assinar\bin\Debug\ittru exemplo assinar.exe
+c:\users\sergio\documents\visual studio 2013\Projects\ittru exemplo assinar\ittru exemplo assinar\bin\Debug\ittru exemplo assinar.pdb
+c:\users\sergio\documents\visual studio 2013\Projects\ittru exemplo assinar\ittru exemplo assinar\bin\Debug\ittru exemplo assinar.xml
+c:\users\sergio\documents\visual studio 2013\Projects\ittru exemplo assinar\ittru exemplo assinar\bin\Debug\ittruSignAx.dll
+c:\users\sergio\documents\visual studio 2013\Projects\ittru exemplo assinar\ittru exemplo assinar\bin\Debug\ittruSignAx.pdb
+c:\users\sergio\documents\visual studio 2013\Projects\ittru exemplo assinar\ittru exemplo assinar\obj\Debug\ittru_exemplo_assinar.Resources.resources
+c:\users\sergio\documents\visual studio 2013\Projects\ittru exemplo assinar\ittru exemplo assinar\obj\Debug\ittru exemplo assinar.vbproj.GenerateResource.Cache
+c:\users\sergio\documents\visual studio 2013\Projects\ittru exemplo assinar\ittru exemplo assinar\obj\Debug\ittru exemplo assinar.exe
+c:\users\sergio\documents\visual studio 2013\Projects\ittru exemplo assinar\ittru exemplo assinar\obj\Debug\ittru exemplo assinar.xml
+c:\users\sergio\documents\visual studio 2013\Projects\ittru exemplo assinar\ittru exemplo assinar\obj\Debug\ittru exemplo assinar.pdb
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\vs13\ittru vb Desktop\ittru exemplo assinar\ittru exemplo assinar\bin\Debug\ittru exemplo assinar.exe.config
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\vs13\ittru vb Desktop\ittru exemplo assinar\ittru exemplo assinar\obj\Debug\ittru exemplo assinar.exe
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\vs13\ittru vb Desktop\ittru exemplo assinar\ittru exemplo assinar\obj\Debug\ittru exemplo assinar.xml
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\vs13\ittru vb Desktop\ittru exemplo assinar\ittru exemplo assinar\obj\Debug\ittru exemplo assinar.pdb
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\vs13\ittru vb Desktop\ittru exemplo assinar\ittru exemplo assinar\bin\Debug\ittru exemplo assinar.exe
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\vs13\ittru vb Desktop\ittru exemplo assinar\ittru exemplo assinar\bin\Debug\ittru exemplo assinar.pdb
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\vs13\ittru vb Desktop\ittru exemplo assinar\ittru exemplo assinar\bin\Debug\ittru exemplo assinar.xml
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\vs13\ittru vb Desktop\ittru exemplo assinar\ittru exemplo assinar\bin\Debug\ittruSignAx.pdb
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\vs13\ittru vb Desktop\ittru exemplo assinar\ittru exemplo assinar\obj\Debug\ittru exemplo assinar.vbprojResolveAssemblyReference.cache
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\vs13\ittru vb Desktop\ittru exemplo assinar\ittru exemplo assinar\obj\Debug\ittru_exemplo_assinar.Resources.resources
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\vs13\ittru vb Desktop\ittru exemplo assinar\ittru exemplo assinar\obj\Debug\ittru exemplo assinar.vbproj.GenerateResource.Cache

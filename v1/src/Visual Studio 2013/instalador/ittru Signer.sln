@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "ittru Signer", "ittru Signer\ittru Signer.isproj", "{AAA1E50E-643A-47CE-B135-AAD6CF7DB709}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Default = CD_ROM|Default
+		DVD-5|Default = DVD-5|Default
+		SingleImage|Default = SingleImage|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AAA1E50E-643A-47CE-B135-AAD6CF7DB709}.CD_ROM|Default.ActiveCfg = CD_ROM
+		{AAA1E50E-643A-47CE-B135-AAD6CF7DB709}.CD_ROM|Default.Build.0 = CD_ROM
+		{AAA1E50E-643A-47CE-B135-AAD6CF7DB709}.DVD-5|Default.ActiveCfg = DVD-5
+		{AAA1E50E-643A-47CE-B135-AAD6CF7DB709}.DVD-5|Default.Build.0 = DVD-5
+		{AAA1E50E-643A-47CE-B135-AAD6CF7DB709}.SingleImage|Default.ActiveCfg = SingleImage
+		{AAA1E50E-643A-47CE-B135-AAD6CF7DB709}.SingleImage|Default.Build.0 = SingleImage
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

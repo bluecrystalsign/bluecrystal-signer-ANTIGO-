@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+<!--
+    Blue Crystal: Document Digital Signature
+    Copyright (C) 2007-2015  Sergio Leal
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->    
+<html>
+<head>
+<title>ActiveX - Assinatura sem Politica de Assinatura (sem politica de assinatura)</title>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	
+	
+	 <script>
+            window.onload = function() {
+                var dropbox = document.getElementById("dropbox");
+                dropbox.addEventListener("dragenter", noop, false);
+                dropbox.addEventListener("dragexit", noop, false);
+                dropbox.addEventListener("dragover", noop, false);
+                dropbox.addEventListener("drop", dropUpload, false);
+            }
+
+            function noop(event) {
+                event.stopPropagation();
+                event.preventDefault();
+            }
+
+            function dropUpload(event) {
+                noop(event);
+                var files = event.dataTransfer.files;
+
+                for (var i = 0; i < files.length; i++) {
+                    upload(files[i]);
+                }
+            }
+
+            function upload(file) {
+                document.getElementById("status").innerHTML = "Uploading " + file.name;
+
+                var formData = new FormData();
+                formData.append("file", file);
+
+                var xhr = new XMLHttpRequest();
+                xhr.upload.addEventListener("progress", uploadProgress, false);
+                xhr.addEventListener("load", uploadComplete, false);
+                xhr.open("POST", "uploadServlet", true); // If async=false, then you'll miss progress bar support.
+                xhr.send(formData);
+            }
+
+            function uploadProgress(event) {
+                // Note: doesn't work with async=false.
+                var progress = Math.round(event.loaded / event.total * 100);
+                document.getElementById("status").innerHTML = "Progress " + progress + "%";
+            }
+
+            function uploadComplete(event) {
+                document.getElementById("status").innerHTML = event.target.responseText;
+            }
+        </script>
+        <style>
+            #dropbox {
+                width: 300px;
+                height: 200px;
+                border: 1px solid gray;
+                border-radius: 5px;
+                padding: 5px;
+                color: gray;
+            }
+        </style>
+	
+	
+	
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+	if(navigator.platform.indexOf("Win") === -1){
+		window.location.href='upload_java_p11.html';
+	}	else {
+		try
+		{
+			blucAx = new ActiveXObject("ittru");
+			
+		}
+		catch(Err)
+		{
+
+			window.location.href='upload_java_capiNoSP.html';
+		}
+		
+	}
+	$("#signBtn").click(function(event) {
+
+		<!-- STEP 1: LIST CERT -->
+		event.preventDefault();
+		assinar();
+	});
+});
+
+
+function assinar()
+{
+	try
+		{
+			blucAx = new ActiveXObject("ittru");
+			certSel = blucAx.getCertificate('titulo 01', 'mensagem', '', '');
+			var keySize = blucAx.getKeySize();
+
+			hash_value = '';
+            time_value = '';
+            sa_value = '';
+            result_value = '';
+
+            $.ajax({
+    	        type: 'GET',
+    	        url: 'ParseCert',
+    	        data: {cert: certSel},
+    	        success: function (data) {
+    	        	var json = $.parseJSON(data);
+    	        	var html = '<table><tr><th>Nome</th><th>Valor</th></tr>';
+    	        	 
+    	        	for(var i = 0; i < json.length; i++){
+    		        	html += '<tr><td>'+json[i].name+'</td><td>'+json[i].value+'</td></tr>';
+    	        	 }
+    	        	 html += '</table>';
+    	        	 $("#parsedCert").html(html);
+
+    	        },
+                error: function (error) {
+                    alert('error: ' + eval(error));
+                }
+    		});
+            
+			$.ajax({
+		        type: 'GET',
+		        url: 'LoadSignatureNoSP',
+		        data: {},
+		        success: function (data) {
+		           
+					retSign = blucAx.sign(99, data);
+
+					<!-- STEP 5: CREATE ENV -->
+					$.ajax({
+						 type: 'GET',
+					        url: 'VerifyEnvelope',
+					        data: {
+					        	envelope: retSign,
+					        	cert: certSel
+					        },
+					        success: function (data) {
+					        	var json = $.parseJSON(data);
+					        	var signedContent = json.signedContent;
+					        	var isOk = json.isOk;
+					        	var certB64 =  json.certB64;
+					        	var certSubject =  json.certSubject;
+					        	if(isOk){
+					        		 $("#signedEnvelope").text(signedContent);
+					        	 } else {
+					        		 alert('Assinatura inválida');
+					        	 }
+					        },
+				            error: function (error) {
+				                alert('error: ' + eval(error));
+				            }
+
+			 		});
+
+
+<!-- FINAL -->
+
+		        },
+	            error: function (error) {
+	                alert('Erro (LoadSignature): ' + eval(error));
+	            }
+ 			});
+		}
+		catch(Err)
+		{
+
+			alert('Erro (catch): ' + Err);
+		}
+}
+</script>
+	ActiveX - ActiveX - Assinatura sem Politica de Assinatura
+	<br>Powered by
+	<b>BluC</b>
+	<br>
+
+<h1>Para testar com outra tecnologia escolha um dos links abaixo.</h1>
+	<a href="index.html">ActiveX -  Assinatura com Politica de Assinatura(ICP-Brasil)</a><br/>
+	<a href="upload_java_capi.html">Applet Java (MS-CAPI) - Assinatura com Politica de Assinatura(ICP-Brasil)</a><br/>
+	<a href="upload_java_capiNoSP.html">Applet Java (MS-CAPI) - Assinatura sem Politica de Assinatura</a><br/>
+	<a href="upload_java_p11.html">Applet Java (PKCS#11) - Assinatura com Politica de Assinatura(ICP-Brasil)</a><br/>
+	<a href="upload_java_p11NoSP.html">Applet Java (PKCS#11) - Assinatura sem Politica de Assinatura</a><br/>
+	
+	
+	<h1>Passo 1: Arraste um documento para a area abaixo.</h1>
+	<div id="dropbox">Arraste o arquivo que deseja assinar para aqui...</div>
+    <div id="status"></div>
+    <h1>Passo 2: Selecione o botão "Assinar"</br>Passo 3: na janela exibida selecione o certificado que deseja utilizar e aguarde.</br>
+    Serão exibidos os dados do certificado e em seguida das assinatura.</h1>    
+	<button id="signBtn" type="submit">Assinar</button>
+	<p><h1>Certificado</h1><br/>
+		<span id="parsedCert">...</span>
+	<p>
+	<p><h1>Assinatura</h1> <br/>
+		<span id="signedEnvelope">...</span>
+	<p>
+</body>
+</html>

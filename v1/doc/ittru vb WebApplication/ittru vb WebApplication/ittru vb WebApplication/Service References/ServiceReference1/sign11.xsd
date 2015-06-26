@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://service.cloud.ittru.com/" targetNamespace="http://service.cloud.ittru.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="WSException" type="tns:WSException" />
+  <xs:element name="buildEnvelope11" type="tns:buildEnvelope11" />
+  <xs:element name="buildEnvelope11Response" type="tns:buildEnvelope11Response" />
+  <xs:element name="createSA11" type="tns:createSA11" />
+  <xs:element name="createSA11Response" type="tns:createSA11Response" />
+  <xs:complexType name="buildEnvelope11">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="credantial" type="tns:credential" />
+      <xs:element name="alg" type="xs:int" />
+      <xs:element name="envelope" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="eb" nillable="true" type="tns:envelopeBuilder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="credential">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="secureInfo" type="xs:string" />
+      <xs:element minOccurs="0" name="userId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="envelopeBuilder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="certId" type="xs:string" />
+      <xs:element name="contentSize" type="xs:int" />
+      <xs:element name="now" type="xs:long" />
+      <xs:element minOccurs="0" name="origHash" type="xs:string" />
+      <xs:element name="shareId" type="xs:long" />
+      <xs:element minOccurs="0" name="signed" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buildEnvelope11Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:envelopeResp" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="envelopeResp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="prefix" type="xs:string" />
+      <xs:element minOccurs="0" name="sufix" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WSException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createSA11">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="credantial" type="tns:credential" />
+      <xs:element minOccurs="0" name="saInfo" type="tns:saBuilderLegacy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saBuilderLegacy">
+    <xs:sequence>
+      <xs:element name="alg" type="xs:int" />
+      <xs:element minOccurs="0" name="certId" type="xs:string" />
+      <xs:element name="env" type="xs:int" />
+      <xs:element name="now" type="xs:long" />
+      <xs:element minOccurs="0" name="origHash" type="xs:string" />
+      <xs:element name="process" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createSA11Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

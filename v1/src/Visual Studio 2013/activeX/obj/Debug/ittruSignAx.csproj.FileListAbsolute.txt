@@ -1,0 +1,15 @@
+D:\sergio\projetos\cryptoApi\codeproj01\ittruSignAx\AcriveXSourceCode\bin\Debug\ittruSignAx.dll
+D:\sergio\projetos\cryptoApi\codeproj01\ittruSignAx\AcriveXSourceCode\bin\Debug\ittruSignAx.pdb
+D:\sergio\projetos\cryptoApi\codeproj01\ittruSignAx\AcriveXSourceCode\obj\Debug\ittruSignAx.dll
+D:\sergio\projetos\cryptoApi\codeproj01\ittruSignAx\AcriveXSourceCode\obj\Debug\ittruSignAx.pdb
+D:\sergio\projetos\cryptoApi\codeproj01\ittruSignAx\AcriveXSourceCode\obj\Debug\ittruSignAx.csprojResolveAssemblyReference.cache
+C:\Users\sergio.fonseca\iniciativas\JF\VSU 13\v2\AcriveXSourceCode (1)\AcriveXSourceCode\bin\Debug\ittruSignAx.dll
+C:\Users\sergio.fonseca\iniciativas\JF\VSU 13\v2\AcriveXSourceCode (1)\AcriveXSourceCode\bin\Debug\ittruSignAx.pdb
+C:\Users\sergio.fonseca\iniciativas\JF\VSU 13\v2\AcriveXSourceCode (1)\AcriveXSourceCode\obj\Debug\ittruSignAx.csprojResolveAssemblyReference.cache
+C:\Users\sergio.fonseca\iniciativas\JF\VSU 13\v2\AcriveXSourceCode (1)\AcriveXSourceCode\obj\Debug\ittruSignAx.dll
+C:\Users\sergio.fonseca\iniciativas\JF\VSU 13\v2\AcriveXSourceCode (1)\AcriveXSourceCode\obj\Debug\ittruSignAx.pdb
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\gitub\1.0.0\src\Visual Studio 2013\activeX\bin\Debug\ittruSignAx.dll
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\gitub\1.0.0\src\Visual Studio 2013\activeX\bin\Debug\ittruSignAx.pdb
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\gitub\1.0.0\src\Visual Studio 2013\activeX\obj\Debug\ittruSignAx.csprojResolveAssemblyReference.cache
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\gitub\1.0.0\src\Visual Studio 2013\activeX\obj\Debug\ittruSignAx.dll
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\gitub\1.0.0\src\Visual Studio 2013\activeX\obj\Debug\ittruSignAx.pdb

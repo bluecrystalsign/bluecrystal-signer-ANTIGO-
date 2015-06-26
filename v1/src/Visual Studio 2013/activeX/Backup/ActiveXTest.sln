@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveXTest", "ActiveXTest.csproj", "{8FB729DB-0C2C-4967-887A-7022B1F0ADD1}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{8FB729DB-0C2C-4967-887A-7022B1F0ADD1}.Debug.ActiveCfg = Debug|.NET
+		{8FB729DB-0C2C-4967-887A-7022B1F0ADD1}.Debug.Build.0 = Debug|.NET
+		{8FB729DB-0C2C-4967-887A-7022B1F0ADD1}.Release.ActiveCfg = Release|.NET
+		{8FB729DB-0C2C-4967-887A-7022B1F0ADD1}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,4 @@
+D:\sergio\projetos\cryptoApi\codeproj01\AcriveXSourceCode\AcriveXSourceCode\bin\Debug\ActiveXTest.dll
+D:\sergio\projetos\cryptoApi\codeproj01\AcriveXSourceCode\AcriveXSourceCode\bin\Debug\ActiveXTest.pdb
+D:\sergio\projetos\cryptoApi\codeproj01\AcriveXSourceCode\AcriveXSourceCode\obj\Debug\ActiveXTest.dll
+D:\sergio\projetos\cryptoApi\codeproj01\AcriveXSourceCode\AcriveXSourceCode\obj\Debug\ActiveXTest.pdb

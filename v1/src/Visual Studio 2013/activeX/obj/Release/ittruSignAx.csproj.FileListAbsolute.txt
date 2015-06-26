@@ -1,0 +1,6 @@
+C:\Users\sergio.fonseca\iniciativas\JF\VSU 13\v2\AcriveXSourceCode (1)\AcriveXSourceCode\bin\Release\ittruSignAx.dll
+C:\Users\sergio.fonseca\iniciativas\JF\VSU 13\v2\AcriveXSourceCode (1)\AcriveXSourceCode\obj\Release\ittruSignAx.csprojResolveAssemblyReference.cache
+C:\Users\sergio.fonseca\iniciativas\JF\VSU 13\v2\AcriveXSourceCode (1)\AcriveXSourceCode\obj\Release\ittruSignAx.dll
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\gitub\1.0.0\src\Visual Studio 2013\activeX\bin\Release\ittruSignAx.dll
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\gitub\1.0.0\src\Visual Studio 2013\activeX\obj\Release\ittruSignAx.csprojResolveAssemblyReference.cache
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\gitub\1.0.0\src\Visual Studio 2013\activeX\obj\Release\ittruSignAx.dll

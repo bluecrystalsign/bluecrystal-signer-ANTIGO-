@@ -1,0 +1,68 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ittruexemploassinar
+</name>
+</assembly>
+<members>
+<member name="P:ittru_exemplo_assinar.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:ittru_exemplo_assinar.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:ittru_exemplo_assinar.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="P:ittru_exemplo_assinar.ServiceReference1.WSException.message">
+	<remarks/>
+</member><member name="T:ittru_exemplo_assinar.ServiceReference1.WSException">
+	<remarks/>
+</member><member name="P:ittru_exemplo_assinar.ServiceReference1.envelopeResp.prefix">
+	<remarks/>
+</member><member name="P:ittru_exemplo_assinar.ServiceReference1.envelopeResp.sufix">
+	<remarks/>
+</member><member name="T:ittru_exemplo_assinar.ServiceReference1.envelopeResp">
+	<remarks/>
+</member><member name="P:ittru_exemplo_assinar.ServiceReference1.envelopeBuilder.certId">
+	<remarks/>
+</member><member name="P:ittru_exemplo_assinar.ServiceReference1.envelopeBuilder.contentSize">
+	<remarks/>
+</member><member name="P:ittru_exemplo_assinar.ServiceReference1.envelopeBuilder.now">
+	<remarks/>
+</member><member name="P:ittru_exemplo_assinar.ServiceReference1.envelopeBuilder.origHash">
+	<remarks/>
+</member><member name="P:ittru_exemplo_assinar.ServiceReference1.envelopeBuilder.shareId">
+	<remarks/>
+</member><member name="P:ittru_exemplo_assinar.ServiceReference1.envelopeBuilder.signed">
+	<remarks/>
+</member><member name="T:ittru_exemplo_assinar.ServiceReference1.envelopeBuilder">
+	<remarks/>
+</member><member name="P:ittru_exemplo_assinar.ServiceReference1.credential.secureInfo">
+	<remarks/>
+</member><member name="P:ittru_exemplo_assinar.ServiceReference1.credential.userId">
+	<remarks/>
+</member><member name="T:ittru_exemplo_assinar.ServiceReference1.credential">
+	<remarks/>
+</member><member name="P:ittru_exemplo_assinar.ServiceReference1.saBuilderLegacy.alg">
+	<remarks/>
+</member><member name="P:ittru_exemplo_assinar.ServiceReference1.saBuilderLegacy.certId">
+	<remarks/>
+</member><member name="P:ittru_exemplo_assinar.ServiceReference1.saBuilderLegacy.env">
+	<remarks/>
+</member><member name="P:ittru_exemplo_assinar.ServiceReference1.saBuilderLegacy.now">
+	<remarks/>
+</member><member name="P:ittru_exemplo_assinar.ServiceReference1.saBuilderLegacy.origHash">
+	<remarks/>
+</member><member name="P:ittru_exemplo_assinar.ServiceReference1.saBuilderLegacy.process">
+	<remarks/>
+</member><member name="T:ittru_exemplo_assinar.ServiceReference1.saBuilderLegacy">
+	<remarks/>
+</member>
+</members>
+</doc>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.cloud.ittru.com/" name="Sign11Service" targetNamespace="http://service.cloud.ittru.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://free.ittru.com:80/ws/serv/sign11?xsd=1" namespace="http://service.cloud.ittru.com/" />
+    </xsd:schema>
+  </types>
+  <message name="createSA11">
+    <part name="parameters" element="tns:createSA11" />
+  </message>
+  <message name="createSA11Response">
+    <part name="parameters" element="tns:createSA11Response" />
+  </message>
+  <message name="WSException">
+    <part name="fault" element="tns:WSException" />
+  </message>
+  <message name="buildEnvelope11">
+    <part name="parameters" element="tns:buildEnvelope11" />
+  </message>
+  <message name="buildEnvelope11Response">
+    <part name="parameters" element="tns:buildEnvelope11Response" />
+  </message>
+  <portType name="Sign11Srv">
+    <operation name="createSA11">
+      <input message="tns:createSA11" />
+      <output message="tns:createSA11Response" />
+      <fault name="WSException" message="tns:WSException" />
+    </operation>
+    <operation name="buildEnvelope11">
+      <input message="tns:buildEnvelope11" />
+      <output message="tns:buildEnvelope11Response" />
+      <fault name="WSException" message="tns:WSException" />
+    </operation>
+  </portType>
+  <binding name="Sign11PortBinding" type="tns:Sign11Srv">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="createSA11">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSException">
+        <soap:fault use="literal" name="WSException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="buildEnvelope11">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="WSException">
+        <soap:fault use="literal" name="WSException" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="Sign11Service">
+    <port name="Sign11Port" binding="tns:Sign11PortBinding">
+      <soap:address location="http://free.ittru.com:80/ws/serv/sign11" />
+    </port>
+  </service>
+</definitions>
