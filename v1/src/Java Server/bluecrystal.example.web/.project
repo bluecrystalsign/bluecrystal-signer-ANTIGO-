@@ -3,7 +3,7 @@
 	<name>bluecrystal.example.web</name>
 	<comment></comment>
 	<projects>
-		<project>bluecrystal.client_ws_java7_1</project>
+		<project>bluecrystal.client_ws_java8_1</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

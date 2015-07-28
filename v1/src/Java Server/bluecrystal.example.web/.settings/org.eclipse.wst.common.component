@@ -2,7 +2,7 @@
     <wb-module deploy-name="bluecrystal.example.web">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/bluecrystal.client_ws_java7_1/bluecrystal.client_ws_java7_1">
+        <dependent-module archiveName="bluecrystal.client_ws_java8_1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/bluecrystal.client_ws_java8_1/bluecrystal.client_ws_java8_1">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="context-root" value="bluecrystal.example.web"/>
