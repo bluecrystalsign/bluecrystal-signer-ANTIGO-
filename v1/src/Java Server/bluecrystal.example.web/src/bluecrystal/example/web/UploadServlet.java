@@ -38,8 +38,14 @@ import javax.servlet.http.Part;
 @MultipartConfig
 @WebServlet("/uploadServlet")
 public class UploadServlet extends HttpServlet {
-	private static final String UPLOAD_PATH = Messages.getString("UploadServlet.0"); //$NON-NLS-1$
-
+	private static final String UPLOAD_PATH = System.getProperty("user.home") +  Messages.getString("UploadServlet.0"); //$NON-NLS-1$
+    public UploadServlet() {
+		super();
+		File f = new File(UPLOAD_PATH);
+		if(!f.exists()){
+			f.mkdirs();
+		}
+	}	
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -59,7 +65,7 @@ public class UploadServlet extends HttpServlet {
         response.getWriter().write(Messages.getString("UploadServlet.4") + filename + Messages.getString("UploadServlet.5")); //$NON-NLS-1$ //$NON-NLS-2$
     }
 
-    private static String getFilename(Part part) {
+	private static String getFilename(Part part) {
         for (String cd : part.getHeader(Messages.getString("UploadServlet.6")).split(Messages.getString("UploadServlet.7"))) { //$NON-NLS-1$ //$NON-NLS-2$
             if (cd.trim().startsWith(Messages.getString("UploadServlet.8"))) { //$NON-NLS-1$
                 String filename = cd.substring(cd.indexOf('=') + 1).trim().replace(Messages.getString("UploadServlet.9"), Messages.getString("UploadServlet.10")); //$NON-NLS-1$ //$NON-NLS-2$
