@@ -1,7 +1,0 @@
-"C:\Program Files\Java\jdk1.7.0_60\bin\keytool" -genkey -keystore "C:\Users\sergio.fonseca\iniciativas\bluecrystal\deploy\applet certs\myKeyStore" -alias me
-"C:\Program Files\Java\jdk1.7.0_60\bin\keytool" -selfcert -keystore "C:\Users\sergio.fonseca\iniciativas\bluecrystal\deploy\applet certs\myKeyStore" -alias me
-"C:\Program Files\Java\jdk1.7.0_60\bin\jarsigner" -keystore "C:\Users\sergio.fonseca\iniciativas\bluecrystal\deploy\applet certs\myKeyStore" "C:\Users\sergio.fonseca\iniciativas\bluecrystal\deploy\pages\bluc_capi.jar" me
-"C:\Program Files\Java\jdk1.7.0_60\bin\jarsigner" -keystore "C:\Users\sergio.fonseca\iniciativas\bluecrystal\deploy\applet certs\myKeyStore" "C:\Users\sergio.fonseca\iniciativas\eclipse\workspace\blucrystal.applet.capi_1.0.0\signed\jna-4.1.0.jar" me
-"C:\Program Files\Java\jdk1.7.0_60\bin\jarsigner" -keystore "C:\Users\sergio.fonseca\iniciativas\bluecrystal\deploy\applet certs\myKeyStore" "C:\Users\sergio.fonseca\iniciativas\eclipse\workspace\blucrystal.applet.capi_1.0.0\signed\jna-platform-4.1.0.jar" me
-
-"C:\Program Files\Java\jdk1.7.0_60\bin\jarsigner" -keystore "C:\Users\sergio.fonseca\iniciativas\bluecrystal\deploy\applet certs\myKeyStore2" "C:\Users\sergio.fonseca\iniciativas\bluecrystal\deploy\pages\bluc_capi.jar" me
