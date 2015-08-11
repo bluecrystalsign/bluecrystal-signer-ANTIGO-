@@ -38,21 +38,28 @@ import javax.servlet.http.Part;
 @MultipartConfig
 @WebServlet("/uploadServlet")
 public class UploadServlet extends HttpServlet {
-	private static final String UPLOAD_PATH = System.getProperty("user.home") +  Messages.getString("UploadServlet.0"); //$NON-NLS-1$
+//	private static final String UPLOAD_PATH = 
+//			System.getProperty("user.home") +  
+//			Messages.getString("UploadServlet.0"); //$NON-NLS-1$
     public UploadServlet() {
 		super();
-		File f = new File(UPLOAD_PATH);
-		if(!f.exists()){
-			f.mkdirs();
-		}
+//		File f = new File(UPLOAD_PATH);
+//		if(!f.exists()){
+//			f.mkdirs();
+//		}
 	}	
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Part file = request.getPart(Messages.getString("UploadServlet.1")); //$NON-NLS-1$
+        handleUpload(request, response);
+    }
+
+	private void handleUpload(HttpServletRequest request,
+			HttpServletResponse response) throws IOException, ServletException {
+		Part file = request.getPart(Messages.getString("UploadServlet.1")); //$NON-NLS-1$
         String filename = getFilename(file);
         InputStream filecontent = file.getInputStream();
-        String destPathname = UPLOAD_PATH + File.separator + filename;
+        String destPathname = getUploadPath() + File.separator + filename;
 		copyFile(filecontent, new File(destPathname));
 		filecontent.close();
 
@@ -63,7 +70,7 @@ public class UploadServlet extends HttpServlet {
         response.setContentType(Messages.getString("UploadServlet.2")); //$NON-NLS-1$
         response.setCharacterEncoding(Messages.getString("UploadServlet.3")); //$NON-NLS-1$
         response.getWriter().write(Messages.getString("UploadServlet.4") + filename + Messages.getString("UploadServlet.5")); //$NON-NLS-1$ //$NON-NLS-2$
-    }
+	}
 
 	private static String getFilename(Part part) {
         for (String cd : part.getHeader(Messages.getString("UploadServlet.6")).split(Messages.getString("UploadServlet.7"))) { //$NON-NLS-1$ //$NON-NLS-2$
@@ -75,6 +82,16 @@ public class UploadServlet extends HttpServlet {
         return null;
     }
     
+	private String getUploadPath(){
+		String uploadPath = 
+				System.getProperty("user.home") +  
+				Messages.getString("UploadServlet.0"); //$NON-NLS-1$
+		File f = new File(uploadPath);
+		if(!f.exists()){
+			f.mkdirs();
+		}
+		return uploadPath;
+	}
     
     private static void copyFile(InputStream input, File dest)
     		throws IOException {
