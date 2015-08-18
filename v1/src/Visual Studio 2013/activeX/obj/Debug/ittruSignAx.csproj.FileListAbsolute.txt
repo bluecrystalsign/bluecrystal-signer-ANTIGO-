@@ -13,3 +13,8 @@ C:\Users\sergio.fonseca\iniciativas\bluecrystal\gitub\1.0.0\src\Visual Studio 20
 C:\Users\sergio.fonseca\iniciativas\bluecrystal\gitub\1.0.0\src\Visual Studio 2013\activeX\obj\Debug\ittruSignAx.csprojResolveAssemblyReference.cache
 C:\Users\sergio.fonseca\iniciativas\bluecrystal\gitub\1.0.0\src\Visual Studio 2013\activeX\obj\Debug\ittruSignAx.dll
 C:\Users\sergio.fonseca\iniciativas\bluecrystal\gitub\1.0.0\src\Visual Studio 2013\activeX\obj\Debug\ittruSignAx.pdb
+C:\Users\sergio.fonseca\Documents\GitHub\bluecrystal-signer\v1\src\Visual Studio 2013\activeX\bin\Debug\ittruSignAx.dll
+C:\Users\sergio.fonseca\Documents\GitHub\bluecrystal-signer\v1\src\Visual Studio 2013\activeX\bin\Debug\ittruSignAx.pdb
+C:\Users\sergio.fonseca\Documents\GitHub\bluecrystal-signer\v1\src\Visual Studio 2013\activeX\obj\Debug\ittruSignAx.csprojResolveAssemblyReference.cache
+C:\Users\sergio.fonseca\Documents\GitHub\bluecrystal-signer\v1\src\Visual Studio 2013\activeX\obj\Debug\ittruSignAx.dll
+C:\Users\sergio.fonseca\Documents\GitHub\bluecrystal-signer\v1\src\Visual Studio 2013\activeX\obj\Debug\ittruSignAx.pdb
