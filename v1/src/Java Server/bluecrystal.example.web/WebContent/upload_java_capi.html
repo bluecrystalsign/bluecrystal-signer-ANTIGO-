@@ -38,6 +38,12 @@ function assinar()
 {
 	try
 	{
+		var isActv = document.signer.isActive(); 
+		if(isActv==false){
+			alert(document.signer.getMsg());
+			return;
+		}
+		
 		certSel = document.signer.getCertificate('Certificados', 'Selecione para assinatura', '', '');
 		var keySize = document.signer.getKeySize();
 
@@ -76,6 +82,7 @@ function assinar()
 	            time_value = data.time_value;
 	            sa_value = data.sa_value;
 	            
+            
 				if(keySize < 2048){
 					retSign = document.signer.sign(0, sa_value);
 				} else {

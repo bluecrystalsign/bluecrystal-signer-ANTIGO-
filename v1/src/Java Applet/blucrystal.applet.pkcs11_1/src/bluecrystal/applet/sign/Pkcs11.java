@@ -203,8 +203,19 @@ public class Pkcs11 {
 			break;
 		}
 	}
-
+	
 	private void signFile() {
+		if (this.alg != ALG_NO_SP) {
+			signFileSignPol();
+			Security.removeProvider(pkcs11Provider.getName());
+		} else {
+			signFileNoSignPol();
+		}
+	}
+
+
+	private void signFileSignPol() {
+		System.out.println("signFileSignPol");
 
 		try {
 			PrivateKey privateKey = PkiHelper.loadPrivFromP12(
@@ -243,6 +254,58 @@ public class Pkcs11 {
 		}
 	}
 
+	private void signFileNoSignPol() {
+		System.out.println("signFileNoSignPol");
+		try {
+			// LOAD CERT
+			PrivateKey privateKey = PkiHelper.loadPrivFromP12(
+					this.lastFilePath, this.userPIN);
+			X509Certificate certificate = PkiHelper.loadCertFromP12(
+					this.lastFilePath, this.userPIN);
+			// Sign data
+			Signature sig = Signature
+					.getInstance(DIGITAL_SIGNATURE_ALGORITHM_NAME[0]);
+//			sha1 only
+			sig.initSign(privateKey);
+			BASE64Decoder b64dec = new BASE64Decoder();
+			BASE64Encoder b64enc = new BASE64Encoder();
+			sig.update(b64dec.decodeBuffer(orig));
+			byte[] signedData  = sig.sign();
+
+			  //load X500Name
+	        X500Name xName      = X500Name.asX500Name(certificate.getSubjectX500Principal());
+	        //load serial number
+	        BigInteger serial   = certificate.getSerialNumber();
+	        //laod digest algorithm
+	        AlgorithmId digestAlgorithmId = new AlgorithmId(AlgorithmId.SHA_oid);
+	        //load signing algorithm
+	        AlgorithmId signAlgorithmId = new AlgorithmId(AlgorithmId.RSAEncryption_oid);
+
+	        //Create SignerInfo:
+	        SignerInfo sInfo = new SignerInfo(xName, serial, digestAlgorithmId, signAlgorithmId, signedData);
+	        //Create ContentInfo:
+//	        ContentInfo cInfo = new ContentInfo(ContentInfo.DIGESTED_DATA_OID, new DerValue(DerValue.tag_OctetString, dataToSign));
+	        ContentInfo cInfo = new ContentInfo(ContentInfo.DIGESTED_DATA_OID, null);
+	        //Create PKCS7 Signed data
+	        PKCS7 p7 = new PKCS7(new AlgorithmId[] { digestAlgorithmId }, cInfo,
+	        		new X509Certificate[]{certificate},
+	                new SignerInfo[] { sInfo });
+	        //Write PKCS7 to bYteArray
+	        ByteArrayOutputStream bOut = new DerOutputStream();
+	        p7.encodeSignedData(bOut);
+	        byte[] encodedPKCS7 = bOut.toByteArray();
+	        
+	        result = b64enc.encode(encodedPKCS7);
+			System.out.println("result:"+result);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	
+	
 	private void signp11() {
 		if (this.alg != ALG_NO_SP) {
 			signp11SignPol();
@@ -300,57 +363,57 @@ public class Pkcs11 {
 
 	}
 
-	private void signp11NoSignPolWithChain() {
-		// http://security.stackexchange.com/questions/13910/pkcs7-encoding-in-java-without-external-libs-like-bouncycastle-etc
-		try {
-			// LOAD CERT
-			PrivateKey privateKey = (PrivateKey) keyStore.getKey(
-					this.getCertAlias(), "".toCharArray());
-			X509Certificate certificate = (X509Certificate) keyStore
-					.getCertificate(this.getCertAlias());
-
-			X509Certificate[] chain = loadCertChain();
-
-			// Sign data
-			Signature sig = Signature
-					.getInstance(DIGITAL_SIGNATURE_ALGORITHM_NAME[0]);
-//			sha1 only
-			sig.initSign(privateKey);
-			BASE64Decoder b64dec = new BASE64Decoder();
-			BASE64Encoder b64enc = new BASE64Encoder();
-			sig.update(b64dec.decodeBuffer(orig));
-			byte[] signedData  = sig.sign();
-
-			  //load X500Name
-	        X500Name xName      = X500Name.asX500Name(certificate.getSubjectX500Principal());
-	        //load serial number
-	        BigInteger serial   = certificate.getSerialNumber();
-	        //laod digest algorithm
-	        AlgorithmId digestAlgorithmId = new AlgorithmId(AlgorithmId.SHA_oid);
-	        //load signing algorithm
-	        AlgorithmId signAlgorithmId = new AlgorithmId(AlgorithmId.RSAEncryption_oid);
-
-	        //Create SignerInfo:
-	        SignerInfo sInfo = new SignerInfo(xName, serial, digestAlgorithmId, signAlgorithmId, signedData);
-	        //Create ContentInfo:
-//	        ContentInfo cInfo = new ContentInfo(ContentInfo.DIGESTED_DATA_OID, new DerValue(DerValue.tag_OctetString, dataToSign));
-	        ContentInfo cInfo = new ContentInfo(ContentInfo.DIGESTED_DATA_OID, null);
-	        //Create PKCS7 Signed data
-	        PKCS7 p7 = new PKCS7(new AlgorithmId[] { digestAlgorithmId }, cInfo,
-	        		chain,
-	                new SignerInfo[] { sInfo });
-	        //Write PKCS7 to bYteArray
-	        ByteArrayOutputStream bOut = new DerOutputStream();
-	        p7.encodeSignedData(bOut);
-	        byte[] encodedPKCS7 = bOut.toByteArray();
-	        
-	        result = b64enc.encode(encodedPKCS7);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-	}
+//	private void signp11NoSignPolWithChain() {
+//		// http://security.stackexchange.com/questions/13910/pkcs7-encoding-in-java-without-external-libs-like-bouncycastle-etc
+//		try {
+//			// LOAD CERT
+//			PrivateKey privateKey = (PrivateKey) keyStore.getKey(
+//					this.getCertAlias(), "".toCharArray());
+//			X509Certificate certificate = (X509Certificate) keyStore
+//					.getCertificate(this.getCertAlias());
+//
+//			X509Certificate[] chain = loadCertChain();
+//
+//			// Sign data
+//			Signature sig = Signature
+//					.getInstance(DIGITAL_SIGNATURE_ALGORITHM_NAME[0]);
+////			sha1 only
+//			sig.initSign(privateKey);
+//			BASE64Decoder b64dec = new BASE64Decoder();
+//			BASE64Encoder b64enc = new BASE64Encoder();
+//			sig.update(b64dec.decodeBuffer(orig));
+//			byte[] signedData  = sig.sign();
+//
+//			  //load X500Name
+//	        X500Name xName      = X500Name.asX500Name(certificate.getSubjectX500Principal());
+//	        //load serial number
+//	        BigInteger serial   = certificate.getSerialNumber();
+//	        //laod digest algorithm
+//	        AlgorithmId digestAlgorithmId = new AlgorithmId(AlgorithmId.SHA_oid);
+//	        //load signing algorithm
+//	        AlgorithmId signAlgorithmId = new AlgorithmId(AlgorithmId.RSAEncryption_oid);
+//
+//	        //Create SignerInfo:
+//	        SignerInfo sInfo = new SignerInfo(xName, serial, digestAlgorithmId, signAlgorithmId, signedData);
+//	        //Create ContentInfo:
+////	        ContentInfo cInfo = new ContentInfo(ContentInfo.DIGESTED_DATA_OID, new DerValue(DerValue.tag_OctetString, dataToSign));
+//	        ContentInfo cInfo = new ContentInfo(ContentInfo.DIGESTED_DATA_OID, null);
+//	        //Create PKCS7 Signed data
+//	        PKCS7 p7 = new PKCS7(new AlgorithmId[] { digestAlgorithmId }, cInfo,
+//	        		chain,
+//	                new SignerInfo[] { sInfo });
+//	        //Write PKCS7 to bYteArray
+//	        ByteArrayOutputStream bOut = new DerOutputStream();
+//	        p7.encodeSignedData(bOut);
+//	        byte[] encodedPKCS7 = bOut.toByteArray();
+//	        
+//	        result = b64enc.encode(encodedPKCS7);
+//
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//
+//	}
 	
 	private X509Certificate[] loadCertChain() throws KeyStoreException {
 		Certificate[] chain = keyStore
@@ -636,9 +699,13 @@ public class Pkcs11 {
 		for (CertId next : this.listCerts) {
 			ret += String.format("{\"alias\":\"%s\",\"subject\":\"%s\"},\n",
 					next.getAlias(), next.getSubjectDn());
+			System.out.println("ret:"+ret);
 		}
-		ret = ret.replace(ret.substring(ret.length() - 2), "");
-
+		
+		System.out.println("ret:"+ret);
+		//ret = ret.replace(ret.substring(ret.length() - 2), "");
+		ret = ret.substring(0, ret.length() - 2);
+		System.out.println("ret:"+ret);
 		return "[\n" + ret + "]\n";
 	}
 

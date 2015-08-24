@@ -109,7 +109,8 @@ function assinar()
 	    		cert_alias = $('input[name=cert_alias]:checked').val();
 	    		var store = $('input[name=store]:checked').val();
 
-	    		
+	    		console.log("sign data:"+data);
+	    		console.log("cert alias:"+data);
 	    		result_value = document.signer.sign(store, 99, pin_value, cert_alias,
 		        			data);
 	    		

@@ -26,6 +26,15 @@ import java.security.Security;
 public class SignApplet extends java.applet.Applet implements SignAppletP11 {
 	private static final long serialVersionUID = 1L;
 	private String msg;
+	private boolean active = false;
+	public String getMsg() {
+		return msg;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
 	private Pkcs11 p11 = null;
 	private final MySynch mySynch = new MySynch();
 
@@ -51,6 +60,9 @@ public class SignApplet extends java.applet.Applet implements SignAppletP11 {
 	 * 
 	 */
 	public void init() {
+		super.init();
+		System.out.println("iniciando Applet PKCS#11 de 2015.08.18...");
+
 		String module = getParameter("module");
 		String otherPath = getParameter("otherPath");
 		init(module, otherPath);
@@ -76,9 +88,12 @@ public class SignApplet extends java.applet.Applet implements SignAppletP11 {
 
 			resize(1, 1);
 			super.init();
-
+			msg = "";
+			active = true;
 		} catch (Exception e) {
 			e.printStackTrace();
+			msg = e.getLocalizedMessage();
+			active = false;
 		}
 
 	}

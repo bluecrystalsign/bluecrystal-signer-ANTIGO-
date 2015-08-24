@@ -55,6 +55,8 @@ function listCerts(){
 
 		data = document.signer.listCerts(store,pin_value);
 		
+		alert(data);
+		
 		var json = $.parseJSON(data);
 		var html = 'Selecione o certificado que deseja usar:<br />';
 		for(var i = 0; i < json.length; i++){
