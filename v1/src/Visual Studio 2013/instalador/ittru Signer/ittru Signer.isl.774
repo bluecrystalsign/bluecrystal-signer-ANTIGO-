@@ -52,7 +52,7 @@
 	<summary>
 		<codepage>1252</codepage>
 		<title>Installation Database</title>
-		<subject>##ID_STRING3##</subject>
+		<subject>ittru web</subject>
 		<author>##ID_STRING2##</author>
 		<keywords>Installer,MSI,Database</keywords>
 		<comments>Contact:  Your local administrator</comments>
@@ -60,8 +60,8 @@
 		<lastauthor>Administrator</lastauthor>
 		<revnumber>{5B40375B-ACE4-42A4-96D6-E051BE2F6846}</revnumber>
 		<lastprinted/>
-		<createdtm>06/21/1999 10:00</createdtm>
-		<lastsavedtm>07/14/2000 13:50</lastsavedtm>
+		<createdtm>06/21/1999 11:00</createdtm>
+		<lastsavedtm>07/14/2000 14:50</lastsavedtm>
 		<pagecount>200</pagecount>
 		<wordcount>0</wordcount>
 		<charcount/>
@@ -340,7 +340,7 @@
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{C809F065-C069-401D-BB6F-6B8E3DE6B906}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>blueCrystalAx.dll</td><td>{8A396FF3-152C-464E-940C-285DEE8B870C}</td><td>INSTALLDIR</td><td>2</td><td/><td>bluecrystalax.dll</td><td>52</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ittruSignAx.dll</td><td>{8145B66E-1F32-49DF-8072-175C88BDA153}</td><td>INSTALLDIR</td><td>2</td><td/><td>ittrusignax.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1051,7 +1051,6 @@
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT1</td></row>
-		<row><td>INSTALLDIR</td><td>blueCrystalAx.dll</td></row>
 	</table>
 
 	<table name="CustomAction">
@@ -1133,7 +1132,6 @@
 		<row><td>ALLUSERSPROFILE</td><td>TARGETDIR</td><td>.:ALLUSE~1|All Users</td><td/><td>0</td><td/></row>
 		<row><td>AdminToolsFolder</td><td>TARGETDIR</td><td>.:Admint~1|AdminTools</td><td/><td>0</td><td/></row>
 		<row><td>AppDataFolder</td><td>TARGETDIR</td><td>.:APPLIC~1|Application Data</td><td/><td>0</td><td/></row>
-		<row><td>BLUC_ACTVIVEX</td><td>ProgramFilesFolder</td><td>BLUCAC~1|bluc actvivex</td><td/><td>0</td><td/></row>
 		<row><td>CommonAppDataFolder</td><td>TARGETDIR</td><td>.:Common~1|CommonAppData</td><td/><td>0</td><td/></row>
 		<row><td>CommonFiles64Folder</td><td>TARGETDIR</td><td>.:Common64</td><td/><td>0</td><td/></row>
 		<row><td>CommonFilesFolder</td><td>TARGETDIR</td><td>.:Common</td><td/><td>0</td><td/></row>
@@ -1142,7 +1140,7 @@
 		<row><td>FavoritesFolder</td><td>TARGETDIR</td><td>.:FAVORI~1|Favorites</td><td/><td>0</td><td/></row>
 		<row><td>FontsFolder</td><td>TARGETDIR</td><td>.:Fonts</td><td/><td>0</td><td/></row>
 		<row><td>GlobalAssemblyCache</td><td>TARGETDIR</td><td>.:Global~1|GlobalAssemblyCache</td><td/><td>0</td><td/></row>
-		<row><td>INSTALLDIR</td><td>BLUC_ACTVIVEX</td><td>.</td><td/><td>0</td><td/></row>
+		<row><td>INSTALLDIR</td><td>ITTRU_WEB1</td><td>.</td><td/><td>0</td><td/></row>
 		<row><td>ISCommonFilesFolder</td><td>CommonFilesFolder</td><td>Instal~1|InstallShield</td><td/><td>0</td><td/></row>
 		<row><td>ISMyCompanyDir</td><td>ProgramFilesFolder</td><td>MYCOMP~1|My Company Name</td><td/><td>0</td><td/></row>
 		<row><td>ISMyProductDir</td><td>ISMyCompanyDir</td><td>MYPROD~1|My Product Name</td><td/><td>0</td><td/></row>
@@ -1867,7 +1865,7 @@
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
-		<row><td>AlwaysInstall</td><td>blueCrystalAx.dll</td></row>
+		<row><td>AlwaysInstall</td><td>ittruSignAx.dll</td></row>
 	</table>
 
 	<table name="File">
@@ -1882,7 +1880,7 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
-		<row><td>bluecrystalax.dll</td><td>blueCrystalAx.dll</td><td>BLUECR~1.DLL|blueCrystalAx.dll</td><td>0</td><td/><td/><td>0</td><td>1</td><td>C:\x\vs\activeX\bin\Debug\blueCrystalAx.dll</td><td>1</td><td/></row>
+		<row><td>ittrusignax.dll</td><td>ittruSignAx.dll</td><td>ITTRUS~1.DLL|ittruSignAx.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\sergio.fonseca\iniciativas\JF\VSU 13\v2\AcriveXSourceCode (1)\AcriveXSourceCode\bin\Release\ittruSignAx.dll</td><td>1</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2027,7 +2025,7 @@
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_61E01740_7C65_415A_A612_622C9F5C4A32_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>blueCrystalAx.dll</td><td/><td/><td>_AD20164C_6E7F_417F_90CC_6D1E64B2EC94_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ittruSignAx.dll</td><td/><td/><td>_825172D7_99D2_4C1B_A1EC_B3F57DEEE4E2_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -2338,6 +2336,12 @@
 		<row><td>WindowsFolder</td><td/><td/><td>1</td></row>
 	</table>
 
+	<table name="ISPowerShellWrap">
+		<col key="yes" def="s72">Action_</col>
+		<col key="yes" def="s72">Name</col>
+		<col def="S0">Value</col>
+	</table>
+
 	<table name="ISProductConfiguration">
 		<col key="yes" def="s72">ISProductConfiguration</col>
 		<col def="S255">ProductConfigurationFlags</col>
@@ -2640,7 +2644,7 @@
 		<col def="I2">Encoded</col>
 		<col def="S0">Comment</col>
 		<col def="I4">TimeStamp</col>
-		<row><td>COMPANY_NAME</td><td>1033</td><td>Sergio Leal</td><td>0</td><td/><td>346254480</td></row>
+		<row><td>COMPANY_NAME</td><td>1033</td><td>ittru tech</td><td>0</td><td/><td>-2128422703</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1033</td><td>Always Install</td><td>0</td><td/><td>287476812</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1033</td><td>The color settings of your system are not adequate for running [ProductName].</td><td>0</td><td/><td>287476812</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_OS</td><td>1033</td><td>The operating system is not adequate for running [ProductName].</td><td>0</td><td/><td>287476812</td></row>
@@ -3740,9 +3744,8 @@
 		<row><td>IDS__TargetReq_DESC_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>287476812</td></row>
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>287476812</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>287476812</td></row>
-		<row><td>ID_STRING1</td><td>1033</td><td>http://bluecryt.al</td><td>0</td><td/><td>346262672</td></row>
-		<row><td>ID_STRING2</td><td>1033</td><td>Sergio Leal</td><td>0</td><td/><td>-1541186258</td></row>
-		<row><td>ID_STRING3</td><td>1033</td><td>blue crsytal activeX</td><td>0</td><td/><td>-1541192402</td></row>
+		<row><td>ID_STRING1</td><td>1033</td><td>http://www.ittru.com</td><td>0</td><td/><td>-1524439029</td></row>
+		<row><td>ID_STRING2</td><td>1033</td><td>ittru tech</td><td>0</td><td/><td>-2128422703</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>287476812</td></row>
 	</table>
 
@@ -3808,12 +3811,6 @@
 		<col key="yes" def="s72">Shortcut_</col>
 		<col key="yes" def="s72">Name</col>
 		<col def="s255">Value</col>
-	</table>
-
-	<table name="ISWSEWrap">
-		<col key="yes" def="s72">Action_</col>
-		<col key="yes" def="s72">Name</col>
-		<col def="S0">Value</col>
 	</table>
 
 	<table name="ISXmlElement">
@@ -4001,7 +3998,7 @@ QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 		<row><td>SaveAsSchema</td><td/></row>
 		<row><td>SccEnabled</td><td>0</td></row>
 		<row><td>SccPath</td><td/></row>
-		<row><td>SchemaVersion</td><td>776</td></row>
+		<row><td>SchemaVersion</td><td>774</td></row>
 		<row><td>Type</td><td>MSIE</td></row>
 	</table>
 
@@ -4360,9 +4357,9 @@ QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{EAB8A44B-1B35-40C3-A076-9A57CC01C8C8}</td><td/></row>
-		<row><td>ProductName</td><td>blue crsytal activeX</td><td/></row>
-		<row><td>ProductVersion</td><td>1.4.0</td><td/></row>
+		<row><td>ProductCode</td><td>{EAB8A44B-1B35-40C3-A076-9A57CC01C8C9}</td><td/></row>
+		<row><td>ProductName</td><td>ittru web</td><td/></row>
+		<row><td>ProductVersion</td><td>1.2.0</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>
@@ -4377,7 +4374,7 @@ QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 		<row><td>SecureCustomProperties</td><td>ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;SUPPORTDIR</td><td/></row>
 		<row><td>SelectedSetupType</td><td>##IDS__DisplayName_Typical##</td><td/></row>
 		<row><td>SetupType</td><td>Typical</td><td/></row>
-		<row><td>UpgradeCode</td><td>{41BA9454-307C-4EF0-9C52-7818A2DFE48D}</td><td/></row>
+		<row><td>UpgradeCode</td><td>{BDC2C6C4-9175-4575-B295-82EDBFA4158E}</td><td/></row>
 		<row><td>_IsMaintenance</td><td>Change</td><td/></row>
 		<row><td>_IsSetupTypeMin</td><td>Typical</td><td/></row>
 	</table>
@@ -5127,6 +5124,9 @@ QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 		<row><td>ISPathVariable</td><td>TestValue</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>The test value of the path variable.</td></row>
 		<row><td>ISPathVariable</td><td>Type</td><td>N</td><td/><td/><td/><td/><td/><td>1;2;4;8</td><td>The type of the path variable.</td></row>
 		<row><td>ISPathVariable</td><td>Value</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>The value of the path variable.</td></row>
+		<row><td>ISPowerShellWrap</td><td>Action_</td><td>N</td><td/><td/><td>CustomAction</td><td>1</td><td>Identifier</td><td/><td>Foreign key into CustomAction table</td></row>
+		<row><td>ISPowerShellWrap</td><td>Name</td><td>N</td><td/><td/><td/><td/><td>Text</td><td/><td>Property associated with this Action</td></row>
+		<row><td>ISPowerShellWrap</td><td>Value</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>Value associated with this Property</td></row>
 		<row><td>ISProductConfiguration</td><td>GeneratePackageCode</td><td>Y</td><td/><td/><td/><td/><td>Number</td><td>0;1</td><td>Indicates whether or not to generate a package code.</td></row>
 		<row><td>ISProductConfiguration</td><td>ISProductConfiguration</td><td>N</td><td/><td/><td/><td/><td>Text</td><td/><td>The name of the product configuration.</td></row>
 		<row><td>ISProductConfiguration</td><td>ProductConfigurationFlags</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>Product configuration (release) flags.</td></row>
@@ -5364,9 +5364,6 @@ QwBEAF8AUgBPAE0AAQBFAHgAcAByAGUAcwBzAA==
 		<row><td>ISVirtualShortcut</td><td>Name</td><td>N</td><td/><td/><td/><td/><td>Identifier</td><td/><td>Property name</td></row>
 		<row><td>ISVirtualShortcut</td><td>Shortcut_</td><td>N</td><td/><td/><td>Shortcut</td><td>1</td><td>Identifier</td><td/><td>Foreign key into Shortcut table.</td></row>
 		<row><td>ISVirtualShortcut</td><td>Value</td><td>N</td><td/><td/><td/><td/><td/><td/><td>Property value</td></row>
-		<row><td>ISWSEWrap</td><td>Action_</td><td>N</td><td/><td/><td>CustomAction</td><td>1</td><td>Identifier</td><td/><td>Foreign key into CustomAction table</td></row>
-		<row><td>ISWSEWrap</td><td>Name</td><td>N</td><td/><td/><td/><td/><td>Text</td><td/><td>Property associated with this Action</td></row>
-		<row><td>ISWSEWrap</td><td>Value</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>Value associated with this Property</td></row>
 		<row><td>ISXmlElement</td><td>Content</td><td>Y</td><td/><td/><td/><td/><td>Text</td><td/><td>Element contents</td></row>
 		<row><td>ISXmlElement</td><td>ISAttributes</td><td>Y</td><td/><td/><td/><td/><td>Number</td><td/><td>Internal XML element attributes</td></row>
 		<row><td>ISXmlElement</td><td>ISXmlElement</td><td>N</td><td/><td/><td/><td/><td>Identifier</td><td/><td>Primary key, non-localized, internal token for Xml element</td></row>
