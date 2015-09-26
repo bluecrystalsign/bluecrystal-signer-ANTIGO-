@@ -23,9 +23,18 @@ import java.awt.Graphics;
 public class SignApplet extends java.applet.Applet implements SignCapiApplet {
 	private static final long serialVersionUID = 1L;
 	private String msg;
+	private boolean active = false;
 	private CapiSignService svc;
 	
 	
+	public String getMsg() {
+		return msg;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
 	@Override
 	public void destroy() {
 		msg = "destroy";
@@ -52,15 +61,18 @@ public class SignApplet extends java.applet.Applet implements SignCapiApplet {
 	public void init() {
 		try {
 			super.init();
+			System.out.println("iniciando Applet CAPI de 2015.08.18...");
 
 			svc = new CapiSignService();
 			
 			svc.init();
 			//getCertificate("title", "message", "", "");
 			msg = "init";
+			active = true;
 		} catch (Throwable e) {
 			e.printStackTrace();
-			msg = "init - "+ e.getLocalizedMessage();
+			msg = e.getLocalizedMessage();
+			active = false;
 		}
 
 	}

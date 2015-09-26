@@ -1,0 +1,69 @@
+REGEDIT4
+
+[HKEY_CLASSES_ROOT\Record\{36251FE9-AFB7-35A1-8E42-2C4B9ACF4E60}\1.0.5746.27525]
+"Class"="Activex.ObjectSafetyOptions"
+"Assembly"="blueCrystalAx, Version=1.0.5746.27525, Culture=neutral, PublicKeyToken=a8cb13b39f18413d"
+"RuntimeVersion"="v2.0.50727"
+"CodeBase"="file:///C:/x/vs/activeX/bin/Debug/blueCrystalAx.dll"
+
+[HKEY_CLASSES_ROOT\Activex.IObjectSafetyImpl]
+@="Activex.IObjectSafetyImpl"
+
+[HKEY_CLASSES_ROOT\Activex.IObjectSafetyImpl\CLSID]
+@="{59D6C4AE-8EB2-3059-A316-D191D705468B}"
+
+[HKEY_CLASSES_ROOT\CLSID\{59D6C4AE-8EB2-3059-A316-D191D705468B}]
+@="Activex.IObjectSafetyImpl"
+
+[HKEY_CLASSES_ROOT\CLSID\{59D6C4AE-8EB2-3059-A316-D191D705468B}\InprocServer32]
+@="mscoree.dll"
+"ThreadingModel"="Both"
+"Class"="Activex.IObjectSafetyImpl"
+"Assembly"="blueCrystalAx, Version=1.0.5746.27525, Culture=neutral, PublicKeyToken=a8cb13b39f18413d"
+"RuntimeVersion"="v2.0.50727"
+"CodeBase"="file:///C:/x/vs/activeX/bin/Debug/blueCrystalAx.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{59D6C4AE-8EB2-3059-A316-D191D705468B}\InprocServer32\1.0.5746.27525]
+"Class"="Activex.IObjectSafetyImpl"
+"Assembly"="blueCrystalAx, Version=1.0.5746.27525, Culture=neutral, PublicKeyToken=a8cb13b39f18413d"
+"RuntimeVersion"="v2.0.50727"
+"CodeBase"="file:///C:/x/vs/activeX/bin/Debug/blueCrystalAx.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{59D6C4AE-8EB2-3059-A316-D191D705468B}\ProgId]
+@="Activex.IObjectSafetyImpl"
+
+[HKEY_CLASSES_ROOT\CLSID\{59D6C4AE-8EB2-3059-A316-D191D705468B}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}]
+
+[HKEY_CLASSES_ROOT\Record\{EFD3E71D-A821-3913-BCB4-A70E0D718B19}\1.0.5746.27525]
+"Class"="ittru.ObjectSafetyOptions"
+"Assembly"="blueCrystalAx, Version=1.0.5746.27525, Culture=neutral, PublicKeyToken=a8cb13b39f18413d"
+"RuntimeVersion"="v2.0.50727"
+"CodeBase"="file:///C:/x/vs/activeX/bin/Debug/blueCrystalAx.dll"
+
+[HKEY_CLASSES_ROOT\ittru]
+@="ittru.signAx"
+
+[HKEY_CLASSES_ROOT\ittru\CLSID]
+@="{D1FF97D1-06CA-4BB0-8704-62F30C131B55}"
+
+[HKEY_CLASSES_ROOT\CLSID\{D1FF97D1-06CA-4BB0-8704-62F30C131B55}]
+@="ittru.signAx"
+
+[HKEY_CLASSES_ROOT\CLSID\{D1FF97D1-06CA-4BB0-8704-62F30C131B55}\InprocServer32]
+@="mscoree.dll"
+"ThreadingModel"="Both"
+"Class"="ittru.signAx"
+"Assembly"="blueCrystalAx, Version=1.0.5746.27525, Culture=neutral, PublicKeyToken=a8cb13b39f18413d"
+"RuntimeVersion"="v2.0.50727"
+"CodeBase"="file:///C:/x/vs/activeX/bin/Debug/blueCrystalAx.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{D1FF97D1-06CA-4BB0-8704-62F30C131B55}\InprocServer32\1.0.5746.27525]
+"Class"="ittru.signAx"
+"Assembly"="blueCrystalAx, Version=1.0.5746.27525, Culture=neutral, PublicKeyToken=a8cb13b39f18413d"
+"RuntimeVersion"="v2.0.50727"
+"CodeBase"="file:///C:/x/vs/activeX/bin/Debug/blueCrystalAx.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{D1FF97D1-06CA-4BB0-8704-62F30C131B55}\ProgId]
+@="ittru"
+
+[HKEY_CLASSES_ROOT\CLSID\{D1FF97D1-06CA-4BB0-8704-62F30C131B55}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}]

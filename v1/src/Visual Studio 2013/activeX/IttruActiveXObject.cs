@@ -126,7 +126,7 @@ namespace ittru
                     }
                     else if (certificatesFiltered.Count == 1)
                     {
-                        certificate = certificates[0];
+                        certificate = certificatesFiltered[0];
                     }
                     else
                     {

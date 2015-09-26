@@ -1,0 +1,5 @@
+C:\x\vs\activeX\bin\x64\Debug\blueCrystalAx.dll
+C:\x\vs\activeX\bin\x64\Debug\blueCrystalAx.pdb
+C:\x\vs\activeX\obj\x64\Debug\ittruSignAx.csprojResolveAssemblyReference.cache
+C:\x\vs\activeX\obj\x64\Debug\blueCrystalAx.dll
+C:\x\vs\activeX\obj\x64\Debug\blueCrystalAx.pdb

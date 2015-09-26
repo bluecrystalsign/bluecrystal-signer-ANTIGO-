@@ -28,13 +28,6 @@ signerCapi::~signerCapi(void)
 
 extern "C"  __declspec(dllexport)  char* getCertificate(char* title,
 	char* msg, char* subjectRegex, char* issuerRegex){
-		//return getCertificate2(title, msg, subjectRegex, issuerRegex);
-	//	return "";
-//}
-
-//char* signerCapi::getCertificate2(char* title,
-	//char* msg, char* subjectRegex, char* issuerRegex){
-
 		try
             {
                 char* ret = "";
@@ -49,9 +42,6 @@ extern "C"  __declspec(dllexport)  char* getCertificate(char* title,
                     bool subjectOk = true;
 
                     if (strlen(subjectRegex) > 0) {
-                        //Match ^ matchSubject = Regex->Match(certificateTmp->Subject, subjectRegex,
-                        //RegexOptions.IgnoreCase);
-                        //subjectOk = matchSubject.Success;
                         subjectOk =  Regex::IsMatch(certificateTmp->Subject, Convert::ToString(subjectRegex),
                             RegexOptions::IgnoreCase );
                     }
@@ -59,9 +49,6 @@ extern "C"  __declspec(dllexport)  char* getCertificate(char* title,
                     bool issuerOk = true;
                     if (strlen(issuerRegex) > 0)
                     {
-                        //Match matchIssuer = Regex.Match(certificateTmp.Issuer, issuerRegex,
-                          //  RegexOptions.IgnoreCase);
-                        //issuerOk = matchIssuer.Success;
                         issuerOk =  Regex::IsMatch(certificateTmp->Issuer, Convert::ToString(issuerRegex),
                             RegexOptions::IgnoreCase );
 
@@ -80,7 +67,7 @@ extern "C"  __declspec(dllexport)  char* getCertificate(char* title,
                     }
                     else if (certificatesFiltered->Count == 1)
                     {
-                        certificate = certificates[0];
+						certificate = certificatesFiltered[0];
                     }
                     else
                     {

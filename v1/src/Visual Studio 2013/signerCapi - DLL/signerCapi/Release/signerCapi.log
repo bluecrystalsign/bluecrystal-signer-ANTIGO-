@@ -1,0 +1,20 @@
+﻿Build started 26/09/2015 08:34:38.
+     1>Project "C:\Users\sergio.fonseca\Documents\GitHub\bluecrystal-signer\v1\src\Visual Studio 2013\signerCapi - DLL\signerCapi\signerCapi.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D SIGNERCAPI_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /EHa /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Security.dll" /analyze- /errorReport:prompt /clr:nostdlib signerCapi.cpp
+         signerCapi.cpp
+     1>signerCapi.cpp(45): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
+     1>signerCapi.cpp(52): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /clr /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _USRDLL /D SIGNERCAPI_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /EHa /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /TP /analyze- /errorReport:prompt "C:\Users\sergio.fonseca\AppData\Local\Temp\.NETFramework,Version=v4.0.AssemblyAttributes.cpp"
+         .NETFramework,Version=v4.0.AssemblyAttributes.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sergio.fonseca\Documents\GitHub\bluecrystal-signer\v1\src\Visual Studio 2013\signerCapi - DLL\Release\signerCapi.dll" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\sergio.fonseca\Documents\GitHub\bluecrystal-signer\v1\src\Visual Studio 2013\signerCapi - DLL\Release\signerCapi.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 /SAFESEH /DLL Release\signerCapi.obj
+         "Release\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+            Creating library C:\Users\sergio.fonseca\Documents\GitHub\bluecrystal-signer\v1\src\Visual Studio 2013\signerCapi - DLL\Release\signerCapi.lib and object C:\Users\sergio.fonseca\Documents\GitHub\bluecrystal-signer\v1\src\Visual Studio 2013\signerCapi - DLL\Release\signerCapi.exp
+         LINK : /LTCG specified but no code generation required; remove /LTCG from the link command line to improve linker performance
+         signerCapi.vcxproj -> C:\Users\sergio.fonseca\Documents\GitHub\bluecrystal-signer\v1\src\Visual Studio 2013\signerCapi - DLL\Release\signerCapi.dll
+     1>Done Building Project "C:\Users\sergio.fonseca\Documents\GitHub\bluecrystal-signer\v1\src\Visual Studio 2013\signerCapi - DLL\signerCapi\signerCapi.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.58

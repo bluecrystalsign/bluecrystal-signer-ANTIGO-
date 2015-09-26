@@ -29,5 +29,7 @@ public interface SignCapiApplet {
 	
 	int getKeySize();
 	String getSubject();
+	public String getMsg();
+	public boolean isActive();
 	
 }

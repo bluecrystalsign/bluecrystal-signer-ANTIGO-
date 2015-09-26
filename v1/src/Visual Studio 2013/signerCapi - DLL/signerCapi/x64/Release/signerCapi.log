@@ -1,0 +1,17 @@
+﻿Build started 26/09/2015 08:35:47.
+     1>Project "C:\Users\sergio.fonseca\Documents\GitHub\bluecrystal-signer\v1\src\Visual Studio 2013\signerCapi - DLL\signerCapi\signerCapi.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W1 /WX- /O2 /D _WINDLL /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Security.dll" /errorReport:prompt /clr:nostdlib signerCapi.cpp
+         signerCapi.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /clr /nologo /W1 /WX- /O2 /D _WINDLL /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /TP /errorReport:prompt "C:\Users\sergio.fonseca\AppData\Local\Temp\.NETFramework,Version=v4.0.AssemblyAttributes.cpp"
+         .NETFramework,Version=v4.0.AssemblyAttributes.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sergio.fonseca\Documents\GitHub\bluecrystal-signer\v1\src\Visual Studio 2013\signerCapi - DLL\x64\Release\signerCapi.dll" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"C:\Users\sergio.fonseca\Documents\GitHub\bluecrystal-signer\v1\src\Visual Studio 2013\signerCapi - DLL\x64\Release\signerCapi.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X64 /DLL x64\Release\signerCapi.obj
+         "x64\Release\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+            Creating library C:\Users\sergio.fonseca\Documents\GitHub\bluecrystal-signer\v1\src\Visual Studio 2013\signerCapi - DLL\x64\Release\signerCapi.lib and object C:\Users\sergio.fonseca\Documents\GitHub\bluecrystal-signer\v1\src\Visual Studio 2013\signerCapi - DLL\x64\Release\signerCapi.exp
+         signerCapi.vcxproj -> C:\Users\sergio.fonseca\Documents\GitHub\bluecrystal-signer\v1\src\Visual Studio 2013\signerCapi - DLL\x64\Release\signerCapi.dll
+     1>Done Building Project "C:\Users\sergio.fonseca\Documents\GitHub\bluecrystal-signer\v1\src\Visual Studio 2013\signerCapi - DLL\signerCapi\signerCapi.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.57

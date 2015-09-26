@@ -122,15 +122,19 @@ public class CapiSignService implements SignCapiApplet {
 	private iSignCapi loadDll() {
 		LoaderUtil lu = new LoaderUtil();
 		
-//		try {
-//			File dll = lu.loadFile(SIGNER_CAPI_64_DLL);
-//
-//			System.out.println("Carregando (64 bits): " + dll.getAbsolutePath());
-//
-//			
-//			return lu.loadNative(dll);
-//		} catch (Throwable e) {
-//			System.out.println("Problemas carregando (64 bits) "+e.getLocalizedMessage());
+		try {
+			File dll = lu.loadFile(SIGNER_CAPI_64_DLL);
+
+			System.out.println("Carregando (64 bits): " + dll.getAbsolutePath());
+
+			
+			return lu.loadNative(dll);
+		} catch (Throwable e) {
+			System.out.println("Problemas carregando (64 bits) "+e.getLocalizedMessage());
+			
+			
+			
+			
 			try {
 				File dll = lu.loadFile(SIGNER_CAPI_DLL);
 
@@ -143,7 +147,7 @@ public class CapiSignService implements SignCapiApplet {
 				e1.printStackTrace();
 			}
 
-//		}
+		}
 		return null;
 	}
 
@@ -243,6 +247,18 @@ public class CapiSignService implements SignCapiApplet {
 		};
 		javascriptListener.start();
 
+	}
+
+	@Override
+	public String getMsg() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean isActive() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

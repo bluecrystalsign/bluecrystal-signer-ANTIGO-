@@ -4,6 +4,6 @@
 	<classpathentry kind="src" path="res"/>
 	<classpathentry kind="lib" path="signed/jna-4.1.0.jar"/>
 	<classpathentry kind="lib" path="signed/jna-platform-4.1.0.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.6.0_45"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.7.0_79"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

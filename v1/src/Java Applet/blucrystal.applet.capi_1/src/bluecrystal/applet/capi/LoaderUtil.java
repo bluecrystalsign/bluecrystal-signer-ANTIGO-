@@ -68,9 +68,8 @@ public class LoaderUtil {
 	}
 
 	public iSignCapi loadNative(File dll) {
-//		NativeLibrary.addSearchPath(
-//				 "signerCapi.dll", dll.getParent());
 		System.setProperty("jna.library.path", dll.getParent());
 		return (iSignCapi) Native.loadLibrary(dll.getName(), iSignCapi.class);
 	}
+	
 }
