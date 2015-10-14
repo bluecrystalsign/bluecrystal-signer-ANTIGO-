@@ -171,9 +171,8 @@ Public Class AppContext
         Dim certificaterequest As CertificateRequest = jsonSerializer.Deserialize(Of CertificateRequest)(jsonIn)
 
         Dim certificateresponse As New CertificateResponse
-        'certificateresponse.certificate = ittruSignAx.getCertificate("Assinatura Digital", "Escolha o certificado que será utilizado na assinatura.", "ICP-Brasil", "")
         certificateresponse.certificate = getCertificate("Assinatura Digital", "Escolha o certificado que será utilizado na assinatura.", "ICP-Brasil", "")
-        certificateresponse.cn = getSubject()
+        certificateresponse.subject = getSubject()
         Dim jsonOut As String = jsonSerializer.Serialize(certificateresponse)
 
         Return jsonOut
@@ -184,7 +183,9 @@ Public Class AppContext
 
         Dim signrequest As SignRequest = jsonSerializer.Deserialize(Of SignRequest)(jsonIn)
 
-        'Dim certificate = ittruSignAx.getCertificate("Assinatura Digital", "Escolha o certificado que será utilizado na assinatura.", "RENATO DO AMARAL CRIVANO MACHADO:RJ13635", "AC-CAIXA-JUS v2")
+        If signrequest.subject <> Nothing Then
+            Dim s As String = BluC.getCertificateBySubject(signrequest.subject)
+        End If
 
         Dim keySize = getKeySize()
         Dim signresponse As New SignResponse
@@ -194,7 +195,7 @@ Public Class AppContext
             signresponse.sign = BluC.sign("sha256", signrequest.payload)
         End If
 
-        signresponse.cn = getSubject()
+        signresponse.subject = getSubject()
 
         Dim jsonOut As String = jsonSerializer.Serialize(signresponse)
 
@@ -212,20 +213,20 @@ Public Class AppContext
 
     Private Class CertificateResponse
         Public certificate As String
-        Public cn As String
+        Public subject As String
         Public errormsg As String
     End Class
 
     Private Class SignRequest
         Public payload As String
         Public certificate As String
-        Public cn As String
+        Public subject As String
         Public policy As String
     End Class
 
     Private Class SignResponse
         Public sign As String
-        Public cn As String
+        Public subject As String
         Public errormsg As String
     End Class
 

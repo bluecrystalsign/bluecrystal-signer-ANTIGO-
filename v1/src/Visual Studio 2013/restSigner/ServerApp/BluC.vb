@@ -53,6 +53,25 @@ Module BluC
         Return ret
     End Function
 
+    Public Function getCertificateBySubject(subject As String) As String
+        Dim ret As String = ""
+        Dim store As X509Store = New X509Store(StoreName.My, StoreLocation.CurrentUser)
+        store.Open(OpenFlags.OpenExistingOnly)
+        Dim certificates As X509Certificate2Collection = store.Certificates
+        Dim certificatesFiltered As X509Certificate2Collection = New X509Certificate2Collection()
+        Dim enumCert As X509Certificate2Enumerator = certificates.GetEnumerator()
+        While (enumCert.MoveNext())
+            Dim certificateTmp As X509Certificate2 = enumCert.Current
+            If certificateTmp.subject = subject Then
+                certificate = certificateTmp
+                Dim certAsByte As Byte() = certificate.Export(X509ContentType.Cert)
+                Dim certAsString As String = Convert.ToBase64String(certAsByte)
+                Return certAsString
+            End If
+        End While
+        Return Nothing
+    End Function
+
     Public Function getSubject() As String
         Return certificate.Subject
     End Function
