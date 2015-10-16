@@ -597,14 +597,14 @@ public class CertificateService {
 
 			try {
 				verificaCertPath(certsOnPath, refDate);
+				if (verifyRevoke) {
+					ret = statusValidator.verifyStatusEE(certsOnPath, refDate,
+							this.getCrlDistributionPoints(cert));
+				}
 			} catch (Exception e) {
 				ret = new CertStatus(StatusConst.UNTRUSTED, null);
 			}
 
-			if (verifyRevoke) {
-				ret = statusValidator.verifyStatusEE(certsOnPath, refDate,
-						this.getCrlDistributionPoints(cert));
-			}
 		} else {
 			LOG.error("** ERROR:certsOnPath == null " + new Date());
 			ret = new CertStatus(StatusConst.UNTRUSTED, null);
