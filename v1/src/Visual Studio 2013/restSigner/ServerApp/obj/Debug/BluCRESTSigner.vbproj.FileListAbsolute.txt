@@ -1,0 +1,6 @@
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\siga\bluecrystal-signer-master\v1\src\Visual Studio 2013\restSigner\ServerApp\bin\Debug\BluCRESTSigner.exe
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\siga\bluecrystal-signer-master\v1\src\Visual Studio 2013\restSigner\ServerApp\bin\Debug\BluCRESTSigner.pdb
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\siga\bluecrystal-signer-master\v1\src\Visual Studio 2013\restSigner\ServerApp\obj\Debug\Resources.resources
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\siga\bluecrystal-signer-master\v1\src\Visual Studio 2013\restSigner\ServerApp\obj\Debug\BluCRESTSigner.vbproj.GenerateResource.Cache
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\siga\bluecrystal-signer-master\v1\src\Visual Studio 2013\restSigner\ServerApp\obj\Debug\BluCRESTSigner.exe
+C:\Users\sergio.fonseca\iniciativas\bluecrystal\siga\bluecrystal-signer-master\v1\src\Visual Studio 2013\restSigner\ServerApp\obj\Debug\BluCRESTSigner.pdb
