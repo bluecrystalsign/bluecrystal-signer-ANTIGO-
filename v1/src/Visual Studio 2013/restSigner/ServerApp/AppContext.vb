@@ -51,7 +51,7 @@ Public Class AppContext
     Public Sub New()
         'Initialize the menus
         mnuSep1 = New ToolStripSeparator()
-        mnuExit = New ToolStripMenuItem("Exit")
+        mnuExit = New ToolStripMenuItem("Encerrar")
         MainMenu = New ContextMenuStrip
         MainMenu.Items.AddRange(New ToolStripItem() {mnuExit})
 
