@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
+  <endpoint
+     name="SignWS"
+     implementation="bluecrystal.service.v1.icpbr.IcpbrServiceImpl"
+     url-pattern="/serv/icpbr_1"/>
+  <endpoint
+     name="RebulidWS"
+     implementation="bluecrystal.service.v1.rebuilder.EnvelopeRebuildServiceImpl"
+     url-pattern="/serv/rebuild_1"/>
+</endpoints>  

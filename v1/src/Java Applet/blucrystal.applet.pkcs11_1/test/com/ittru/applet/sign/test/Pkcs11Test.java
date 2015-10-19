@@ -78,10 +78,9 @@ public class Pkcs11Test {
 	public void testLoadKeyStoreP12() {
 		try {
 			System.out.println("testLoadKeyStoreP12");
-			KeyStore capiStore = KeyStore.getInstance("pkcs12", "SunJSSE");
-			capiStore.load(new FileInputStream("C:\\Users\\sergio\\Dropbox\\Produtos\\deploy\\certs\\apt2.p12"), "qwerty".toCharArray());
-			Enumeration<String> aliases = capiStore.aliases();
-			System.out.println("loadKeyStoreMscapi");
+			KeyStore keyStore = KeyStore.getInstance("pkcs12", "SunJSSE");
+			keyStore.load(new FileInputStream("C:\\Users\\sergio.fonseca\\iniciativas\\bluecrystal\\content\\gmail_comodo.pfx"), "qwerty".toCharArray());
+			Enumeration<String> aliases = keyStore.aliases();
 			while (aliases.hasMoreElements()) {
 				System.out.println(aliases.nextElement());
 			}
@@ -93,6 +92,20 @@ public class Pkcs11Test {
 		}
 	}
 	
+	@Test
+	public void testSignFileP12Sha256() {
+		try {
+			Pkcs11 p11 = new Pkcs11("aetpkss1.dll;eTPKCS11.dll", "");
+			p11.setLastFilePath("C:\\Users\\sergio.fonseca\\iniciativas\\bluecrystal\\content\\gmail_comodo.pfx");
+			p11.setStore(1);
+			p11.setUserPIN("qwerty");
+			p11.setAlg(2);
+			p11.setOrig("MYIB8zAcBgkqhkiG9w0BCQUxDxcNMTUxMDE5MTYxNDQyWjCBlAYLKoZIhvcNAQkQAg8xgYQwgYEGCGBMAQcBAQIBMC8wCwYJYIZIAWUDBAIBBCDdV8mKQxO8E5jOZUPTgCRYlXz3Fq4ylOxNjCYlEpHmwTBEMEIGCyqGSIb3DQEJEAUBFjNodHRwOi8vcG9saXRpY2FzLmljcGJyYXNpbC5nb3YuYnIvUEFfQURfUkJfdjJfMS5kZXIwgfAGCyqGSIb3DQEJEAIvMYHgMIHdMIHaMIHXBCDw7BO5BkNhP1aqForUx0hz8/W+RIMIZ1oCEEkB7g6NRDCBsjCBnaSBmjCBlzELMAkGA1UEBhMCR0IxGzAZBgNVBAgTEkdyZWF0ZXIgTWFuY2hlc3RlcjEQMA4GA1UEBxMHU2FsZm9yZDEaMBgGA1UEChMRQ09NT0RPIENBIExpbWl0ZWQxPTA7BgNVBAMTNENPTU9ETyBSU0EgQ2xpZW50IEF1dGhlbnRpY2F0aW9uIGFuZCBTZWN1cmUgRW1haWwgQ0ECEBb+U7BVq86Tju5L8K/4UVYwLwYJKoZIhvcNAQkEMSIEIJ9oRV/uRGeigVcY+48UWqW6Foco8JfdjeJfvKjkzBOmMBgGCSqGSIb3DQEJAzELBgkqhkiG9w0BBwE=");
+			p11.sign();
+		} catch (Exception e) {
+			fail(e.getLocalizedMessage());
+		}
+	}
 	
 
 }

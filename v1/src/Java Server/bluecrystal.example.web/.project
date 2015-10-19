@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>bluecrystal.example.web</name>
+	<name>bluecrystal.ws.tc_1</name>
 	<comment></comment>
 	<projects>
-		<project>bluecrystal.client_ws_java8_1</project>
+		<project>bluecrystal.deps.BC_G2_1.0.0</project>
+		<project>bluecrystal.service_1.0.0</project>
+		<project>bluecrystal.domain_1.0.0</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -24,6 +24,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.math.BigInteger;
+import java.security.InvalidKeyException;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
@@ -32,6 +33,7 @@ import java.security.Provider;
 import java.security.Provider.Service;
 import java.security.Security;
 import java.security.Signature;
+import java.security.SignatureException;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
@@ -182,7 +184,7 @@ public class Pkcs11 {
 		return result;
 	}
 
-	public void sign() {
+	public void sign() throws Exception  {
 
 		System.out.println("sign");
 		switch (this.store) {
@@ -204,59 +206,65 @@ public class Pkcs11 {
 		}
 	}
 	
-	private void signFile() {
+	private void signFile() throws Exception {
 		if (this.alg != ALG_NO_SP) {
 			signFileSignPol();
-			Security.removeProvider(pkcs11Provider.getName());
 		} else {
 			signFileNoSignPol();
+		}
+		if(pkcs11Provider != null){
+			Security.removeProvider(pkcs11Provider.getName());
 		}
 	}
 
 
-	private void signFileSignPol() {
+	private void signFileSignPol() throws Exception {
 		System.out.println("signFileSignPol");
 
-		try {
 			PrivateKey privateKey = PkiHelper.loadPrivFromP12(
 					this.lastFilePath, this.userPIN);
 			X509Certificate certificate = PkiHelper.loadCertFromP12(
 					this.lastFilePath, this.userPIN);
+			System.out.println("Certificate: ");
+			System.out.println(certificate.getSubjectDN().getName());
+			System.out.println(certificate.getNotBefore() + " -> "+certificate.getNotAfter());
+			
 
-			Signature sig = Signature
-					.getInstance(DIGITAL_SIGNATURE_ALGORITHM_NAME[this.alg]);
-			sig.initSign(privateKey);
+			performSign(privateKey, certificate);
 
-			BASE64Decoder b64dec = new BASE64Decoder();
-			BASE64Encoder b64enc = new BASE64Encoder();
-			sig.update(b64dec.decodeBuffer(orig));
-			byte[] dataSignature = sig.sign();
+	}
 
-			result = b64enc.encode(dataSignature);
-			System.out.print("Assinatura: ");
-			System.out.println(result);
+	private void performSign(PrivateKey privateKey, X509Certificate certificate)
+			throws NoSuchAlgorithmException, InvalidKeyException, IOException,
+			SignatureException {
+		Signature sig = Signature
+				.getInstance(DIGITAL_SIGNATURE_ALGORITHM_NAME[this.alg]);
+		sig.initSign(privateKey);
 
-			// Verify signature
-			Signature verificacion = Signature
-					.getInstance(DIGITAL_SIGNATURE_ALGORITHM_NAME[this.alg]);
-			verificacion.initVerify(certificate);
-			if (verificacion.verify(dataSignature)) {
-				println("Signature verification Succeeded!");
-			} else {
-				println("Signature verification FAILED!");
-			}
+		BASE64Decoder b64dec = new BASE64Decoder();
+		BASE64Encoder b64enc = new BASE64Encoder();
+		byte[] decodeOrig = b64dec.decodeBuffer(orig);
+		sig.update(decodeOrig);
+		byte[] dataSignature = sig.sign();
 
-		} catch (Exception e) {
+		result = b64enc.encode(dataSignature);
+		System.out.print("Assinatura: ");
+		System.out.println(result);
 
-			e.printStackTrace();
-
-			this.lastError = e.getMessage();
+		// Verify signature
+		Signature verificacion = Signature
+				.getInstance(DIGITAL_SIGNATURE_ALGORITHM_NAME[this.alg]);
+		verificacion.initVerify(certificate);
+		verificacion.update(decodeOrig);
+		if (verificacion.verify(dataSignature)) {
+			println("Signature verification Succeeded!");
+		} else {
+			println("Signature verification FAILED!");
 		}
 	}
 
-	private void signFileNoSignPol() {
+	private void signFileNoSignPol() throws Exception {
 		System.out.println("signFileNoSignPol");
-		try {
 			// LOAD CERT
 			PrivateKey privateKey = PkiHelper.loadPrivFromP12(
 					this.lastFilePath, this.userPIN);
@@ -297,16 +305,11 @@ public class Pkcs11 {
 	        
 	        result = b64enc.encode(encodedPKCS7);
 			System.out.println("result:"+result);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
 	}
 
 	
 	
-	private void signp11() {
+	private void signp11() throws Exception {
 		if (this.alg != ALG_NO_SP) {
 			signp11SignPol();
 		} else {
@@ -315,8 +318,8 @@ public class Pkcs11 {
 		Security.removeProvider(pkcs11Provider.getName());
 	}
 
-	private void signp11NoSignPol() {
-		try {
+	private void signp11NoSignPol() throws Exception {
+
 			// LOAD CERT
 			PrivateKey privateKey = (PrivateKey) keyStore.getKey(
 					this.getCertAlias(), "".toCharArray());
@@ -356,11 +359,6 @@ public class Pkcs11 {
 	        byte[] encodedPKCS7 = bOut.toByteArray();
 	        
 	        result = b64enc.encode(encodedPKCS7);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
 	}
 
 //	private void signp11NoSignPolWithChain() {
@@ -415,7 +413,7 @@ public class Pkcs11 {
 //
 //	}
 	
-	private X509Certificate[] loadCertChain() throws KeyStoreException {
+	private X509Certificate[] loadCertChain() throws Exception {
 		Certificate[] chain = keyStore
 				.getCertificateChain(this.getCertAlias());
 		X509Certificate[] chainX509 = new X509Certificate[chain.length];
@@ -426,8 +424,7 @@ public class Pkcs11 {
 		return chainX509;
 	}
 
-	private void signp11SignPol() {
-		try {
+	private void signp11SignPol() throws Exception {
 
 			// LOAD CERT
 			PrivateKey privateKey = (PrivateKey) keyStore.getKey(
@@ -435,35 +432,31 @@ public class Pkcs11 {
 			X509Certificate certificate = (X509Certificate) keyStore
 					.getCertificate(this.getCertAlias());
 
-			// Sign data
-			Signature sig = Signature
-					.getInstance(DIGITAL_SIGNATURE_ALGORITHM_NAME[this.alg]);
-			sig.initSign(privateKey);
-			BASE64Decoder b64dec = new BASE64Decoder();
-			BASE64Encoder b64enc = new BASE64Encoder();
-			sig.update(b64dec.decodeBuffer(orig));
-			byte[] dataSignature = sig.sign();
+//			// Sign data
+//			Signature sig = Signature
+//					.getInstance(DIGITAL_SIGNATURE_ALGORITHM_NAME[this.alg]);
+//			sig.initSign(privateKey);
+//			BASE64Decoder b64dec = new BASE64Decoder();
+//			BASE64Encoder b64enc = new BASE64Encoder();
+//			sig.update(b64dec.decodeBuffer(orig));
+//			byte[] dataSignature = sig.sign();
+//
+//			result = b64enc.encode(dataSignature);
+//			System.out.print("Assinatura: ");
+//			System.out.println(result);
+//
+//			// Verify signature
+//			Signature verificacion = Signature
+//					.getInstance(DIGITAL_SIGNATURE_ALGORITHM_NAME[this.alg]);
+//			verificacion.initVerify(certificate);
+//			verificacion.update(b64dec.decodeBuffer(orig));
+//			if (verificacion.verify(dataSignature)) {
+//				println("Signature verification Succeeded!");
+//			} else {
+//				println("Signature verification FAILED!");
+//			}
 
-			result = b64enc.encode(dataSignature);
-			System.out.print("Assinatura: ");
-			System.out.println(result);
-
-			// Verify signature
-			Signature verificacion = Signature
-					.getInstance(DIGITAL_SIGNATURE_ALGORITHM_NAME[this.alg]);
-			verificacion.initVerify(certificate);
-			verificacion.update(b64dec.decodeBuffer(orig));
-			if (verificacion.verify(dataSignature)) {
-				println("Signature verification Succeeded!");
-			} else {
-				println("Signature verification FAILED!");
-			}
-
-			
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+			performSign(privateKey, certificate);			
 
 	}
 

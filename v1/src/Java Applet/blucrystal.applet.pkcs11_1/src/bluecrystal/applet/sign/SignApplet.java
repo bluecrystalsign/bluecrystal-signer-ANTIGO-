@@ -112,7 +112,13 @@ public class SignApplet extends java.applet.Applet implements SignAppletP11 {
 		p11.setOrig(orig);
 		p11.setAlg(alg);
 		p11.setStore(store);
-
+		
+		System.out.println("*** sign ***");
+		System.out.println("userPIN: "+userPIN);
+		System.out.println("certAlias: "+certAlias);
+		System.out.println("orig: "+orig);
+		System.out.println("alg: "+alg);
+		System.out.println("store: "+store);
 		mySynch.countDown();
 
 		try {
@@ -208,8 +214,8 @@ public class SignApplet extends java.applet.Applet implements SignAppletP11 {
 						mySynch.setEnded();
 						mySynch.reset();
 					} catch (Exception e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
+						System.out.println("*** "+e.getLocalizedMessage());
 					}
 				}
 			}
