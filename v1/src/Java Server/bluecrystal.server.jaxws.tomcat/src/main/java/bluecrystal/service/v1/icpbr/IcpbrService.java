@@ -55,26 +55,36 @@ public interface IcpbrService {
 			@WebParam(name = "origHashb64")String origHashb64, 
 			@WebParam(name = "signingTime")Date signingTime) throws Exception;
 
-	public abstract String composeCoSignEnvelopeADRB21(
-			@WebParam(name = "signatute") Signature[] signb64) throws Exception;	
+//	public abstract String composeCoSignEnvelopeADRB21(
+//			@WebParam(name = "signatute") Signature[] signb64) throws Exception;	
 	
-	public abstract boolean validateSignatureByPolicy(
-			@WebParam(name = "signCmsb64")String signCmsb64, 
-			@WebParam(name = "psb64")String psb64)
-			throws Exception;
+	
 
 	public abstract SignCompare extractSignCompare(
 			@WebParam(name = "signCmsb64")String signCmsb64) throws Exception;
 	
 	public String getCertSubject(@WebParam(name = "certb64")String certb64) throws Exception;
 	public String getCertSubjectCn(@WebParam(name = "certb64")String certb64) throws Exception;
+	public NameValue[] parseCertificate(@WebParam(name = "certb64")String certb64) throws Exception;
+	
+	public String extractSignerCert(@WebParam(name = "signCmsb64")String signCmsb64) throws Exception;
+
 	public boolean  validateSign(
 			@WebParam(name = "signCmsb64")String signCmsb64, 
 			@WebParam(name = "origHashb64")String origHashb64,
 			@WebParam(name = "signingTime")Date signingTime, 
 			@WebParam(name = "verifyCrlOcsp")boolean verifyCrlOcsp) throws Exception;
+
+	public int  validateSignWithStatus(
+			@WebParam(name = "signCmsb64")String signCmsb64, 
+			@WebParam(name = "origHashb64")String origHashb64,
+			@WebParam(name = "signingTime")Date signingTime, 
+			@WebParam(name = "verifyCrlOcsp")boolean verifyCrlOcsp) throws Exception;
 	
-	public NameValue[] parseCertificate(@WebParam(name = "certb64")String certb64) throws Exception;
-	
-	public String extractSignerCert(@WebParam(name = "signCmsb64")String signCmsb64) throws Exception;
+	public abstract boolean validateSignatureByPolicy(
+			@WebParam(name = "signCmsb64")String signCmsb64, 
+			@WebParam(name = "psb64")String psb64)
+			throws Exception;
+
+
 }

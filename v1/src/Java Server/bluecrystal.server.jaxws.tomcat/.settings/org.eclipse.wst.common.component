@@ -4,10 +4,10 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <dependent-module archiveName="bluecrystal.deps.service-1.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/bluecrystal.deps.service/bluecrystal.deps.service">
+        <dependent-module archiveName="bluecrystal.deps.service-1.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/bluecrystal.deps.service/bluecrystal.deps.service">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="bluecrystal.deps.domain-1.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/bluecrystal.deps.domain/bluecrystal.deps.domain">
+        <dependent-module archiveName="bluecrystal.deps.domain-1.3.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/bluecrystal.deps.domain/bluecrystal.deps.domain">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="bluecrystal.deps.bc_g2-1.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/bluecrystal.deps.bc_g2/bluecrystal.deps.bc_g2">

@@ -322,6 +322,12 @@ public class IcpbrServiceImpl implements IcpbrService {
 //	Validate CMS envelope
 	public boolean validateSign(String signCms, String origHashb64, Date dtSign,
 			boolean verifyCRL) throws Exception {
+		return(validateSignWithStatus(signCms, origHashb64, dtSign, verifyCRL) == StatusConst.GOOD);
+	}
+
+//	Validate CMS envelope
+	public int validateSignWithStatus(String signCms, String origHashb64, Date dtSign,
+			boolean verifyCRL) throws Exception {
 		LogDebug("validateSign: " + "\n signCms (" + signCms + ")"
 				+ "\n content (" + origHashb64 + ")" + "\n dtSign (" + dtSign + ")"
 				+ "\n verifyCRL (" + verifyCRL + ")");
@@ -330,13 +336,14 @@ public class IcpbrServiceImpl implements IcpbrService {
 			byte[] origHash = Base64.decode(origHashb64);
 
 			int validateSign = ccServ.validateSign(sign, origHash, dtSign, verifyCRL);
-			return validateSign == StatusConst.GOOD;
+			return validateSign;
 		} catch (Exception e) {
 			LOG.error("ERRO: ", e);
 			throw e;
 		}
 	}
 
+	
 	public NameValue[] parseCertificate(String certificate) throws Exception {
 
 		LogDebug("parseCertificate: " + "\n certificate (" + certificate + ")");
