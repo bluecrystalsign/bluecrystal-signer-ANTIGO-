@@ -1,6 +1,6 @@
 # bluecrystal-signer
 blue crystal digital signature
-Esse repositorio está descontinuado.
+Esse repositorio contem uma versão antiga.
 
 As novas versões devem ser baixadas dos outros repositórios.
 * o produto final está em https://github.com/bluecrystalsign/signer-distibution
